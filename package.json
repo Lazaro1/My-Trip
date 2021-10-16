@@ -23,9 +23,11 @@
   },
   "dependencies": {
     "next": "9.4.4",
+    "next-pwa": "^5.4.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.0",
+    "webpack": "4"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.10.1",
