@@ -1,5 +1,11 @@
+
+import React, { useEffect } from "react"
 import Login from 'pages/Login'
+import UserContext from 'contexts/UserContex';
 
 export default function Home() {
-  return <Login />
+  
+  return <UserContext>
+    <Login />
+  </UserContext>
 }
