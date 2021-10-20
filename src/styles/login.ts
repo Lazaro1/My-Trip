@@ -35,4 +35,17 @@ export const Separetor = styled.div`
 
 export const Forgetpass = styled.a`
   color: rgba(0, 0, 0, 0.65);
+  margin-top: 22px;
+`
+
+export const CreateLogin = styled.a`
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  color: #3B33B3;
+  p{
+    color: black;
+    margin-right: 5px;
+  }
+;
 `

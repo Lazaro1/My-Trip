@@ -1,5 +1,5 @@
-import { ButtonLogin } from 'styles/button'
-import { Forgetpass, LoginBackground, LoginBody, LoginForm, Separetor } from 'styles/login'
+import { ButtonLogin, Buttonpurple } from 'styles/button'
+import { CreateLogin, Forgetpass, LoginBackground, LoginBody, LoginForm, Separetor } from 'styles/login'
 import { LoginInput } from 'styles/inputs'
 
 
@@ -24,6 +24,8 @@ const Login = () => (
                 <LoginInput type="email" />
                 <LoginInput type="password" />
                 <Forgetpass>Esqueceu a senha?</Forgetpass>
+                <Buttonpurple>Login</Buttonpurple>
+                <CreateLogin><p>Não tem uma conta?</p>Registrar</CreateLogin>
 
             </LoginForm>
     </LoginBody>
