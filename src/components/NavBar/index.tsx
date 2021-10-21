@@ -1,7 +1,3 @@
-const Main = () => (
-  <div>
-    
-  </div>
-)
+const Main = () => <div></div>
 
 export default Main

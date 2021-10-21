@@ -9,6 +9,8 @@
 ### VS Code Dependecies
  - EditorConfig for VS Code
  - vscode-styled-components
+ - Prettier - Code Formater
+ - Eslint
 
 ### Using Docker
  - Install Docker 'https://www.docker.com/'

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { ButtonLogin, Buttonpurple, IconButton } from 'styles/button'
-import { useTheme, Theme } from 'contexts/ThemeContext';
+import { useTheme, Theme } from 'contexts/ThemeContext'
 import {
   CreateLogin,
   Forgetpass,
@@ -16,12 +16,12 @@ import {
 import { Input, InputInfo, LoginInput } from 'styles/inputs'
 
 const Login: React.FC = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme()
 
-  useEffect(()=> {
+  useEffect(() => {
     setTheme(Theme.Dark)
     console.log('This is my context Theme ', theme)
-  },[])
+  }, [])
 
   const [screenState, setSceenState] = useState(true)
 
