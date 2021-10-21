@@ -3,8 +3,7 @@ import React, {useState} from 'react'
 import { UserContext } from 'contexts/UserContex'
 import { ButtonLogin, Buttonpurple, IconButton } from 'styles/button'
 import { CreateLogin, Forgetpass, LoginBackground, LoginBody, LoginForm, LoginH1, LoginSpan, LoginTitle, Separetor, SeparetorLine } from 'styles/login'
-import { Input, InputInfo, InputName, LoginInput } from 'styles/inputs'
-import { ContextType } from 'types'
+import { Input, InputInfo, LoginInput } from 'styles/inputs'
 
 
 
