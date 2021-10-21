@@ -3,12 +3,11 @@ import * as React from 'react'
 export const UserContext = React.createContext(null)
 
 const UserContextProvider: React.FC = ({ children }) => {
-
   const [user, setUser] = React.useState<IUser>({
     id: 1,
     name: 'Álvaro',
     email: 'alvarojfjunior@gmail.com',
-    password: '123',
+    password: '123'
   })
 
   const saveUser = (user: IUser) => {
@@ -16,7 +15,7 @@ const UserContextProvider: React.FC = ({ children }) => {
       id: Math.random(),
       name: user.name,
       email: user.email,
-      password: user.password,
+      password: user.password
     }
     setUser(newuser)
   }
@@ -28,4 +27,4 @@ const UserContextProvider: React.FC = ({ children }) => {
   )
 }
 
-export default UserContextProvider;
+export default UserContextProvider
