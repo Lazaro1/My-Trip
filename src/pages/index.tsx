@@ -1,11 +1,14 @@
 import React from 'react'
 import Login from 'pages/Login'
-import UserContext from 'contexts/UserContex'
+import { ThemeContext, Theme } from 'contexts/ThemeContext'
 
 export default function Home() {
+
+  const [theme, setTheme] = React.useState(Theme.Light);
+
   return (
-    <UserContext>
-      <Login />
-    </UserContext>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+        <Login />
+    </ThemeContext.Provider>
   )
 }

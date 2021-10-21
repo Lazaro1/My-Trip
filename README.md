@@ -8,6 +8,7 @@
 
 ### VS Code Dependecies
  - EditorConfig for VS Code
+ - vscode-styled-components
 
 ### Using Docker
  - Install Docker 'https://www.docker.com/'
@@ -18,6 +19,10 @@
 
 ### tips
  - Give linux folder permission `sudo chown -R userName:password .`
+ - Enable VS Code lint on save ctrl + shift + p -> Opensettings(JSON) -> add this settings:
+    "editor.formatOnSave": true,
+    "prettier.eslintIntegration": true
+
 
 
 
