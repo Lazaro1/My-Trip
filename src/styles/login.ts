@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styled from 'styled-components'
 
 export const LoginBody = styled.div`
@@ -22,6 +23,7 @@ export const LoginBackground = styled.div`
   }
 `
 
+
 export const LoginForm = styled.form`
   width: 50%;
   height: 100%;
@@ -29,10 +31,32 @@ export const LoginForm = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  h1{
-    font-size: 40px;
+  `
+export const LoginTitle = styled.div`
+    width: 100%;
+    font-size: 3rem;
     margin-bottom: 2rem;
-  }
+    color: #6C63FF;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    margin-left: 12rem;
+    margin-top: 2.5rem;
+    font-height: 900;
+    
+
+`
+
+export const LoginSpan = styled.span`
+    margin-bottom: 1.5rem;
+    color: black;
+    
+    
+`
+export const LoginH1 = styled.h1`
+
+    font-size:3rem;
+    color: #6C63FF;
 `
 
 export const Separetor = styled.div`

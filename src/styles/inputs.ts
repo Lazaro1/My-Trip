@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styled from 'styled-components'
 
 export const LoginInput = styled.div`
@@ -23,4 +24,7 @@ export const Input = styled.input`
     outline: none;
     border: none;
     margin-top: 0.5rem;
+` 
+export const InputName = styled.input`
+
 `
