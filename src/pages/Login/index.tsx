@@ -65,7 +65,7 @@ const Login: React.FC = () => {
               </InputInfo>
             </LoginInput>
             <Forgetpass>Esqueceu a senha?</Forgetpass>
-            <Buttonpurple color="green"> Login</Buttonpurple>
+            <Buttonpurple color="#6C63FF"> Login</Buttonpurple>
             <CreateLogin
               onClick={() => {
                 setSceenState(false)

@@ -35,5 +35,5 @@ export const Buttonpurple = styled.button`
   font-size: 2.2rem;
   font-weight: bold;
   color: #ffffff;
-  background: ${(props) => (props.color ? props.color : 'red')};
+  background: ${(props) => (props.color ? props.color : '#6C63FF')};
 `
