@@ -30,7 +30,7 @@ const Login: React.FC = () => {
       <LoginBackground>
         <img src="img/background-login.png" alt="" />
       </LoginBackground>
-      <LoginForm>
+      <LoginForm style={{ border: '1px black solid' }}>
         {screenState ? (
           <>
             <LoginTitle>
@@ -46,9 +46,9 @@ const Login: React.FC = () => {
             </ButtonLogin>
 
             <Separetor>
-              <SeparetorLine></SeparetorLine>
+              <SeparetorLine />
               <p>OU</p>
-              <SeparetorLine></SeparetorLine>
+              <SeparetorLine />
             </Separetor>
             <LoginInput>
               <IconButton src="img/mail.png" />
@@ -65,7 +65,7 @@ const Login: React.FC = () => {
               </InputInfo>
             </LoginInput>
             <Forgetpass>Esqueceu a senha?</Forgetpass>
-            <Buttonpurple>Login</Buttonpurple>
+            <Buttonpurple color="green"> Login</Buttonpurple>
             <CreateLogin
               onClick={() => {
                 setSceenState(false)
