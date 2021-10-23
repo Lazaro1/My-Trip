@@ -5,15 +5,14 @@ import {
   CreateLogin,
   Forgetpass,
   LoginBackground,
-  LoginBody,
   LoginForm,
   LoginH1,
-  LoginSpan,
   LoginTitle,
   Separetor,
   SeparetorLine
 } from 'styles/login'
 import { Input, InputInfo, LoginInput } from 'styles/inputs'
+import { ContainerFlexRow } from 'styles/container'
 
 const Login: React.FC = () => {
   const { theme, setTheme } = useTheme()
@@ -26,15 +25,14 @@ const Login: React.FC = () => {
   const [screenState, setSceenState] = useState(true)
 
   return (
-    <LoginBody>
+    <ContainerFlexRow style={{ width: '100%', height: '100%' }}>
       <LoginBackground>
         <img src="img/background-login.png" alt="" />
       </LoginBackground>
-      <LoginForm style={{ border: '1px black solid' }}>
+      <LoginForm>
         {screenState ? (
           <>
             <LoginTitle>
-              <LoginSpan>Bem Vindo ao </LoginSpan>
               <LoginH1>My Trip</LoginH1>
             </LoginTitle>
 
@@ -77,7 +75,6 @@ const Login: React.FC = () => {
         ) : (
           <>
             <LoginTitle>
-              <LoginSpan>Bem Vindo ao </LoginSpan>
               <LoginH1>My Trip</LoginH1>
             </LoginTitle>
 
@@ -120,7 +117,7 @@ const Login: React.FC = () => {
           </>
         )}
       </LoginForm>
-    </LoginBody>
+    </ContainerFlexRow>
   )
 }
 
