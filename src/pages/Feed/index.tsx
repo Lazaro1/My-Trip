@@ -28,11 +28,12 @@ const Feed: React.FC = () => {
           width: '100%',
           justifyContent: 'space-between',
           gridArea: 'header',
-          padding: '10px'
+          padding: '10px',
+          borderBottom: '1px solid black'
         }}
       >
         <h2 style={{ fontSize: '20px' }}>Menu</h2>
-        <LoginInput style={{ width: '20%', height: '50%' }}>
+        <LoginInput style={{ width: '30%', height: '40%', marginTop: '0' }}>
           <IconImage src="img/search.svg" />
           <Input type="text" placeholder="Pesquisa" />
         </LoginInput>
