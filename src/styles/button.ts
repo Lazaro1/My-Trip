@@ -16,13 +16,6 @@ export const ButtonLogin = styled.button`
   font-weight: bold;
 `
 
-export const IconButton = styled.img`
-  width: 36px;
-  height: 36px;
-  margin-right: 2rem;
-  margin-left: 1rem;
-`
-
 export const Buttonpurple = styled.button`
   background-color: color;
   cursor: pointer;

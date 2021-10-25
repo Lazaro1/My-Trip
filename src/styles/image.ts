@@ -8,3 +8,9 @@ export const BackgroundColor = styled.img`
 export const ProfileImg = styled.img`
   border-radius: 100%;
 `
+export const IconImage = styled.img`
+  width: 36px;
+  height: 36px;
+  margin-right: 2rem;
+  margin-left: 1rem;
+`

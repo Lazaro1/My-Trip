@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <Feed />
+      <Login />
     </ThemeContext.Provider>
   )
 }

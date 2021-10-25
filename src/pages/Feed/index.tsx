@@ -5,8 +5,9 @@ import {
   ContainerFlexRow,
   ContainerGrid
 } from 'styles/container'
-import { ProfileImg } from 'styles/image'
+import { IconImage, ProfileImg } from 'styles/image'
 import { BoxInfo, BoxTravel, Travel } from 'styles/box'
+import { Input, LoginInput } from 'styles/inputs'
 
 const Feed: React.FC = () => {
   const { theme, setTheme } = useTheme()
@@ -24,16 +25,25 @@ const Feed: React.FC = () => {
     >
       <ContainerFlexRow
         style={{
+          width: '100%',
           justifyContent: 'space-between',
-          gridArea: 'header'
+          gridArea: 'header',
+          padding: '10px'
         }}
       >
         <h2 style={{ fontSize: '20px' }}>Menu</h2>
+        <LoginInput style={{ width: '20%', height: '50%' }}>
+          <IconImage src="img/search.svg" />
+          <Input type="text" placeholder="Pesquisa" />
+        </LoginInput>
         <h1 style={{ fontSize: '40px' }}>My Trip</h1>
-        <ProfileImg
-          src="img/profile.jpg"
-          style={{ width: '100px', height: '100px' }}
-        />
+        <ContainerFlexRow>
+          <ProfileImg
+            src="img/profile.jpg"
+            style={{ width: '50px', height: '50px' }}
+          />
+          <h2>Henrique</h2>
+        </ContainerFlexRow>
       </ContainerFlexRow>
       <BoxTravel>
         <Travel>

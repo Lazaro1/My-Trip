@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const ContainerFlexRow = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
 `
 export const ContainerFlexColumn = styled.div`
   display: flex;
