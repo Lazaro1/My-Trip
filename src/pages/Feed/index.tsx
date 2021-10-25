@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useTheme, Theme } from 'contexts/ThemeContext'
-import {
-  ContainerFlexColumn,
-  ContainerFlexRow,
-  ContainerGrid
-} from 'styles/container'
-import { IconImage, ProfileImg } from 'styles/image'
-import { BoxInfo, BoxTravel, Travel } from 'styles/box'
+import { ContainerFlexRow, ContainerGrid, Header } from 'styles/container'
+import { BackgroundColor, IconImage, ProfileImg } from 'styles/image'
+import { BoxInfo, BoxTravel, Travel, TravelNew } from 'styles/box'
 import { Input, LoginInput } from 'styles/inputs'
 
 const Feed: React.FC = () => {
@@ -21,19 +17,11 @@ const Feed: React.FC = () => {
 
   return (
     <ContainerGrid
-      style={{ width: '100%', height: '100%', background: 'gray' }}
+      style={{ width: '100%', height: '100%', background: '#e8f1f2' }}
     >
-      <ContainerFlexRow
-        style={{
-          width: '100%',
-          justifyContent: 'space-between',
-          gridArea: 'header',
-          padding: '10px',
-          borderBottom: '1px solid black'
-        }}
-      >
+      <Header>
         <h2 style={{ fontSize: '20px' }}>Menu</h2>
-        <LoginInput style={{ width: '30%', height: '40%', marginTop: '0' }}>
+        <LoginInput style={{ width: '30%', height: '60%', marginTop: '0' }}>
           <IconImage src="img/search.svg" />
           <Input type="text" placeholder="Pesquisa" />
         </LoginInput>
@@ -45,24 +33,43 @@ const Feed: React.FC = () => {
           />
           <h2>Henrique</h2>
         </ContainerFlexRow>
-      </ContainerFlexRow>
+      </Header>
       <BoxTravel>
+        <TravelNew>
+          <ProfileImg
+            src="img/profile.jpg"
+            style={{ width: '40px', height: '40px' }}
+          />
+          <LoginInput
+            style={{
+              width: '40%',
+              height: '60%',
+              paddingLeft: '10px',
+              marginTop: '0'
+            }}
+          >
+            <Input type="text" placeholder="Nome da viagem" />
+          </LoginInput>
+          <p>Nova Viagem</p>
+        </TravelNew>
         <Travel>
           <ProfileImg
             src="img/profile.jpg"
-            style={{ width: '70px', height: '70px' }}
+            style={{ width: '40px', height: '40px' }}
           />
           <h1>Estrada Real</h1>
         </Travel>
         <Travel>
           <ProfileImg
             src="img/profile.jpg"
-            style={{ width: '70px', height: '70px' }}
+            style={{ width: '40px', height: '40px' }}
           />
           <h1>Estrada Real</h1>
         </Travel>
       </BoxTravel>
-      <BoxInfo></BoxInfo>
+      <BoxInfo>
+        <h1>Amigos</h1>
+      </BoxInfo>
     </ContainerGrid>
   )
 }
