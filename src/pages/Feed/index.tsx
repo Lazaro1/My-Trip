@@ -1,25 +1,14 @@
-import { useState, useEffect } from 'react'
-import { useTheme, Theme } from 'contexts/ThemeContext'
 import {
   ContainerFlexColumn,
   ContainerFlexRow,
   ContainerGrid,
   Header
 } from 'styles/container'
-import { BackgroundColor, IconImage, ProfileImg } from 'styles/image'
+import { IconImage, ProfileImg } from 'styles/image'
 import { BoxImage, BoxInfo, BoxTravel, Travel, TravelNew } from 'styles/box'
 import { Input, LoginInput } from 'styles/inputs'
 
 const Feed: React.FC = () => {
-  const { theme, setTheme } = useTheme()
-
-  useEffect(() => {
-    setTheme(Theme.Dark)
-    console.log('This is my context Theme ', theme)
-  }, [])
-
-  const [screenState, setSceenState] = useState(true)
-
   return (
     <ContainerGrid
       style={{ width: '100%', height: '100%', background: '#e8f1f2' }}

@@ -28,3 +28,16 @@ export const Header = styled.div`
   border-bottom: 1px solid #1b98e0;
   background: #1b98e0;
 `
+export const ConteinerInput = styled.div`
+  width: 85%;
+  height: 10%;
+  border: none;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  outline: none;
+  margin-top: 2rem;
+`
