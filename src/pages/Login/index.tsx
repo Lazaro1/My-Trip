@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react'
-import { ButtonLogin, Buttonpurple, IconButton } from 'styles/button'
+import { ButtonLogin, Buttonpurple } from 'styles/button'
 import { useTheme, Theme } from 'contexts/ThemeContext'
 import {
   CreateLogin,
   Forgetpass,
   LoginBackground,
-  LoginBody,
   LoginForm,
   LoginH1,
-  LoginSpan,
   LoginTitle,
   Separetor,
   SeparetorLine
 } from 'styles/login'
 import { Input, InputInfo, LoginInput } from 'styles/inputs'
+import { ContainerFlexRow } from 'styles/container'
+import { IconImage } from 'styles/image'
 
 const Login: React.FC = () => {
   const { theme, setTheme } = useTheme()
@@ -26,23 +26,22 @@ const Login: React.FC = () => {
   const [screenState, setSceenState] = useState(true)
 
   return (
-    <LoginBody>
+    <ContainerFlexRow style={{ width: '100%', height: '100%' }}>
       <LoginBackground>
         <img src="img/background-login.png" alt="" />
       </LoginBackground>
-      <LoginForm style={{ border: '1px black solid' }}>
+      <LoginForm>
         {screenState ? (
           <>
             <LoginTitle>
-              <LoginSpan>Bem Vindo ao </LoginSpan>
               <LoginH1>My Trip</LoginH1>
             </LoginTitle>
 
             <ButtonLogin>
-              <IconButton src="img/google-icon.svg" /> Logar com Google
+              <IconImage src="img/google-icon.svg" /> Logar com Google
             </ButtonLogin>
             <ButtonLogin>
-              <IconButton src="img/facebook-icon.svg" /> Logar com Facebook
+              <IconImage src="img/facebook-icon.svg" /> Logar com Facebook
             </ButtonLogin>
 
             <Separetor>
@@ -51,14 +50,14 @@ const Login: React.FC = () => {
               <SeparetorLine />
             </Separetor>
             <LoginInput>
-              <IconButton src="img/mail.png" />
+              <IconImage src="img/mail.png" />
               <InputInfo>
                 <label>Email</label>
                 <Input type="email" placeholder="example@email.com" />
               </InputInfo>
             </LoginInput>
             <LoginInput>
-              <IconButton src="img/key.png" />
+              <IconImage src="img/key.png" />
               <InputInfo>
                 <label>Senha</label>
                 <Input type="password" placeholder="***************" />
@@ -77,15 +76,14 @@ const Login: React.FC = () => {
         ) : (
           <>
             <LoginTitle>
-              <LoginSpan>Bem Vindo ao </LoginSpan>
               <LoginH1>My Trip</LoginH1>
             </LoginTitle>
 
             <ButtonLogin>
-              <IconButton src="img/google-icon.svg" /> Criar conta com o Google
+              <IconImage src="img/google-icon.svg" /> Criar conta com o Google
             </ButtonLogin>
             <ButtonLogin>
-              <IconButton src="img/facebook-icon.svg" /> Criar conta com o
+              <IconImage src="img/facebook-icon.svg" /> Criar conta com o
               Facebook
             </ButtonLogin>
 
@@ -95,21 +93,21 @@ const Login: React.FC = () => {
               <SeparetorLine></SeparetorLine>
             </Separetor>
             <LoginInput>
-              <IconButton src="img/face.png" />
+              <IconImage src="img/face.png" />
               <InputInfo>
                 <label>Nome</label>
                 <Input type="text" placeholder="insert your name" />
               </InputInfo>
             </LoginInput>
             <LoginInput>
-              <IconButton src="img/mail.png" />
+              <IconImage src="img/mail.png" />
               <InputInfo>
                 <label>Email</label>
                 <Input type="email" placeholder="example@email.com" />
               </InputInfo>
             </LoginInput>
             <LoginInput>
-              <IconButton src="img/key.png" />
+              <IconImage src="img/key.png" />
               <InputInfo>
                 <label>Senha</label>
                 <Input type="password" placeholder="***************" />
@@ -120,7 +118,7 @@ const Login: React.FC = () => {
           </>
         )}
       </LoginForm>
-    </LoginBody>
+    </ContainerFlexRow>
   )
 }
 

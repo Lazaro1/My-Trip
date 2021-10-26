@@ -8,7 +8,7 @@ export const LoginInput = styled.div`
 
     display: flex;
     align-items: center;
-    
+
     background-color: #F2F2F2;
     border-radius: 20px;
     outline: none;
@@ -24,7 +24,7 @@ export const Input = styled.input`
     outline: none;
     border: none;
     margin-top: 0.5rem;
-` 
+`
 export const InputName = styled.input`
 
 `
