@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useTheme, Theme } from 'contexts/ThemeContext'
-import { ContainerFlexRow, ContainerGrid, Header } from 'styles/container'
+import {
+  ContainerFlexColumn,
+  ContainerFlexRow,
+  ContainerGrid,
+  Header
+} from 'styles/container'
 import { BackgroundColor, IconImage, ProfileImg } from 'styles/image'
-import { BoxInfo, BoxTravel, Travel, TravelNew } from 'styles/box'
+import { BoxImage, BoxInfo, BoxTravel, Travel, TravelNew } from 'styles/box'
 import { Input, LoginInput } from 'styles/inputs'
 
 const Feed: React.FC = () => {
@@ -53,18 +58,25 @@ const Feed: React.FC = () => {
           <p>Nova Viagem</p>
         </TravelNew>
         <Travel>
-          <ProfileImg
-            src="img/profile.jpg"
-            style={{ width: '40px', height: '40px' }}
-          />
-          <h1>Estrada Real</h1>
+          <ContainerFlexRow>
+            <ProfileImg
+              src="img/profile.jpg"
+              style={{ width: '40px', height: '40px' }}
+            />
+            <h1 style={{ marginLeft: '40%' }}>Estrada Real</h1>
+          </ContainerFlexRow>
         </Travel>
         <Travel>
-          <ProfileImg
-            src="img/profile.jpg"
-            style={{ width: '40px', height: '40px' }}
-          />
-          <h1>Estrada Real</h1>
+          <ContainerFlexRow>
+            <ProfileImg
+              src="img/profile.jpg"
+              style={{ width: '40px', height: '40px' }}
+            />
+            <h1 style={{ marginLeft: '40%' }}>Estrada Real</h1>
+          </ContainerFlexRow>
+          <ContainerFlexColumn>
+            <BoxImage></BoxImage>
+          </ContainerFlexColumn>
         </Travel>
       </BoxTravel>
       <BoxInfo>

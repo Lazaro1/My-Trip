@@ -5,6 +5,7 @@ export const BoxTravel = styled.div`
   grid-area: boxTravel;
   display: flex;
   flex-direction: column;
+  height: 100%;
 `
 export const TravelNew = styled.div`
   display: flex;
@@ -15,8 +16,8 @@ export const TravelNew = styled.div`
   padding-left: 5px;
   border: 1px solid white;
   height: 100px;
-  border-radius: 15px;
-  border: 0.5px solid #247ba0;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.25);
 `
 
 export const Travel = styled.div`
@@ -26,9 +27,9 @@ export const Travel = styled.div`
   padding-left: 5px;
   padding-top: 5px;
   border: 1px solid white;
-  height: 300px;
-  border-radius: 15px;
-  border: 0.5px solid #247ba0;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.25);
 `
 
 export const BoxInfo = styled.div`
@@ -38,7 +39,14 @@ export const BoxInfo = styled.div`
   margin: 20px;
   border: 1px solid white;
   height: 400px;
-  border-radius: 15px;
-  border: 0.5px solid #247ba0;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.25);
   grid-area: boxInfo;
+`
+export const BoxImage = styled.div`
+  width: 70%;
+  height: 150px;
+  border-radius: 10px;
+  background: url('img/cachoeira.jpg');
+  background-size: cover;
 `
