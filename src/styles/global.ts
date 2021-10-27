@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Gotham Pro', sans-serif;
   }
 `
 
