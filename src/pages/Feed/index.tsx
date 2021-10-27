@@ -1,27 +1,28 @@
 import { BoxInfoPerfil, BoxTravel } from 'styles/box'
 import {
-  ContainerFixedTop,
   ContainerFlexColumn,
   ContainerFlexRow,
   ContainerFlexIcon
 } from 'styles/container'
+import {
+  ContainerFixedTop,
+  ContainerLogo,
+  ContainerMenu,
+  ContainerProfile,
+  ContainerSearch
+} from 'styles/containerHeader'
 import { ProfileImg } from 'styles/image'
 import { Input } from 'styles/inputs'
+import { ContainerFeed } from './feed'
 
 const Feed: React.FC = () => {
   return (
-    <ContainerFlexRow>
+    <ContainerFeed>
       <ContainerFixedTop>
-        <ContainerFlexRow
-          style={{
-            width: '130px',
-            height: '80px',
-            borderRight: '1px solid #f4f4f4'
-          }}
-        >
+        <ContainerLogo>
           <img src="img/iconLogo.png" alt="" />
-        </ContainerFlexRow>
-        <ContainerFlexRow>
+        </ContainerLogo>
+        <ContainerMenu>
           <ContainerFlexIcon>
             <img src="img/IconFeed.svg" alt="" />
             <strong>FEED</strong>
@@ -34,21 +35,15 @@ const Feed: React.FC = () => {
             <img src="img/IconTravel.svg" alt="" />
             <strong>VIAGENS</strong>
           </ContainerFlexIcon>
-        </ContainerFlexRow>
-        <ContainerFlexRow
-          style={{
-            borderRight: '1px solid #f4f4f4',
-            marginLeft: '13.8%',
-            width: '25.4%'
-          }}
-        >
+        </ContainerMenu>
+        <ContainerSearch>
           <img src="img/iconSearch.svg" />
           <Input placeholder="Pesquisa" />
-        </ContainerFlexRow>
-        <ContainerFlexRow style={{ borderLeft: '1px solid #f4f4f4' }}>
+        </ContainerSearch>
+        <ContainerProfile>
           <ProfileImg src="img/profile.jpg" />
-          <strong style={{ fontSize: '1.4rem' }}>Henrique Nobre</strong>
-        </ContainerFlexRow>
+          <strong>Henrique Nobre</strong>
+        </ContainerProfile>
       </ContainerFixedTop>
 
       <ContainerFlexRow
@@ -61,9 +56,11 @@ const Feed: React.FC = () => {
       >
         <ContainerFlexColumn style={{ width: '71%' }}>
           <BoxTravel>
-            <ProfileImg src="img/profile.jpg" />
-            <strong style={{ fontSize: '1rem' }}>Henrique Nobre</strong>
-            <h2>Estrada Real</h2>
+            <ContainerFlexRow style={{ justifyContent: 'flex-start' }}>
+              <ProfileImg src="img/profile.jpg" />
+              <strong style={{ fontSize: '1rem' }}>Henrique Nobre</strong>
+              <h2>Estrada Real</h2>
+            </ContainerFlexRow>
           </BoxTravel>
           <BoxTravel>
             <ProfileImg src="img/profile.jpg" />
@@ -83,7 +80,7 @@ const Feed: React.FC = () => {
           <BoxInfoPerfil style={{ width: '70%' }}></BoxInfoPerfil>
         </ContainerFlexColumn>
       </ContainerFlexRow>
-    </ContainerFlexRow>
+    </ContainerFeed>
   )
 }
 
