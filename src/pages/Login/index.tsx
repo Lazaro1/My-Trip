@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useTheme, Theme } from 'contexts/ThemeContext'
 import { ContainerFlexRow, ContainerFlexColumn } from 'styles/container'
-import { ButtonLogin } from 'styles/button'
+import { ButtonBorder } from 'styles/button'
 
 const Login: React.FC = () => {
   const { theme, setTheme } = useTheme()
@@ -15,29 +15,24 @@ const Login: React.FC = () => {
 
   return (
     <ContainerFlexRow style={{ height: '100%' }}>
-      <div
-        style={{
-          background: 'blue',
-          width: '50%',
-          height: '100%'
-        }}
+      <ContainerFlexColumn
+        style={{ height: '100%', width: '45.9%' }}
+      ></ContainerFlexColumn>
+      <ContainerFlexColumn
+        style={{ height: '100%', width: '54.1%', background: '#e5e5e5' }}
       >
-        <h1> lado direito</h1>
-      </div>
-      <div
-        style={{
-          background: 'red',
-          width: '50%',
-          height: '100%'
-        }}
-      >
-        <ContainerFlexColumn>
-          <h1 style={{ textAlign: 'right', color: '#6C63FF' }}>My Trip</h1>
-          <ButtonLogin>
-            <p>Login with google</p>
-          </ButtonLogin>
-        </ContainerFlexColumn>
-      </div>
+        <ContainerFlexRow
+          style={{
+            width: '81.49%',
+            justifyContent: 'flex-end',
+            marginTop: '10px'
+          }}
+        >
+          <h2>Entrar</h2>
+          <ButtonBorder>Sing in</ButtonBorder>
+        </ContainerFlexRow>
+        <img src="img/logo.png " />
+      </ContainerFlexColumn>
     </ContainerFlexRow>
   )
 }

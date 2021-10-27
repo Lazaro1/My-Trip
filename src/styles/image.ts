@@ -14,3 +14,4 @@ export const IconImage = styled.img`
   margin-right: 2rem;
   margin-left: 1rem;
 `
+
