@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useTheme, Theme } from 'contexts/ThemeContext'
 import { ContainerFlexRow, ContainerFlexColumn } from 'styles/container'
-import { ButtonBorder } from 'styles/button'
+import { ButtonBorder, ButtonSimple } from 'styles/button'
 
 const Login: React.FC = () => {
   const { theme, setTheme } = useTheme()
@@ -16,8 +16,17 @@ const Login: React.FC = () => {
   return (
     <ContainerFlexRow style={{ height: '100%' }}>
       <ContainerFlexColumn
-        style={{ height: '100%', width: '45.9%' }}
-      ></ContainerFlexColumn>
+        style={{
+          height: '100%',
+          width: '45.9%',
+          justifyContent: 'center'
+        }}
+      >
+        <ContainerFlexColumn>
+          <h1>ESQUERDA</h1>
+        </ContainerFlexColumn>
+      </ContainerFlexColumn>
+
       <ContainerFlexColumn
         style={{ height: '100%', width: '54.1%', background: '#e5e5e5' }}
       >
@@ -28,8 +37,12 @@ const Login: React.FC = () => {
             marginTop: '10px'
           }}
         >
-          <h2>Entrar</h2>
-          <ButtonBorder>Sing in</ButtonBorder>
+          <ContainerFlexRow
+            style={{ marginBottom: '191px', marginTop: '41px' }}
+          >
+            <ButtonSimple>Join now</ButtonSimple>
+            <ButtonBorder style={{ marginLeft: '16px' }}>Sing in</ButtonBorder>
+          </ContainerFlexRow>
         </ContainerFlexRow>
         <img src="img/logo.png " />
       </ContainerFlexColumn>
