@@ -11,10 +11,12 @@ export const ContainerFlexColumn = styled.div`
   align-items: center;
 `
 export const ContainerFixedTop = styled.div`
+  background: white;
   position: fixed;
   top: 0;
   width: 100%;
   display: flex;
+  border-bottom: 1px solid #f4f4f4;
 `
 export const ContainerFlexIcon = styled.div`
   display: flex;
@@ -25,6 +27,10 @@ export const ContainerFlexIcon = styled.div`
 
   img {
     margin-bottom: 13px;
+    cursor: pointer;
+  }
+  strong {
+    cursor: pointer;
   }
 `
 
