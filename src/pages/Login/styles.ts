@@ -59,7 +59,7 @@ export const ContainerForm = styled.div`
   align-items: flex-start;
   justify-content: center;
 
-  padding: 86px;
+  margin-left: 8rem;
 `
 export const InputZone = styled.div`
   width: 554px;
@@ -71,19 +71,7 @@ export const InputZone = styled.div`
   align-items: flex-start;
 
   background: #ffffff;
-  border: 1px solid #c1bbbb;
-
-  > label {
-    /* position: absolute; */
-    margin-left: 27px;
-
-    font-size: 18px;
-    font-weight: 400;
-    font-family: 'Roboto';
-    line-height: 21px;
-
-    color: rgba(0, 0, 0, 0.61);
-  }
+  border: 2px solid #c1bbbb;
 `
 
 export const ContainerRight = styled.div`

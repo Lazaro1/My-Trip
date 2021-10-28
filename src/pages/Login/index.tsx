@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useTheme, Theme } from 'contexts/ThemeContext'
 import * as S from './styles'
 import { ButtonSigIn, ButtonJoin } from 'styles/button'
-import { Input } from 'styles/inputs'
+import { Input, InputLabel } from 'styles/inputs'
 
 const Login: React.FC = () => {
   const { theme, setTheme } = useTheme()
@@ -25,8 +25,12 @@ const Login: React.FC = () => {
         </S.ContainerTitle>
         <S.ContainerForm>
           <S.InputZone>
-            <label>Email Address</label>
+            <InputLabel>Email Address</InputLabel>
             <Input type="email" placeholder="example@email.com" />
+          </S.InputZone>
+          <S.InputZone>
+            <InputLabel>Password</InputLabel>
+            <Input type="Password" placeholder="password" />
           </S.InputZone>
         </S.ContainerForm>
       </S.ContainerLeft>
