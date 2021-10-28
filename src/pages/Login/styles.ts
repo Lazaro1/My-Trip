@@ -9,11 +9,20 @@ export const Wrapper = styled.div`
 
 export const ContainerLeft = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
 
   height: 100%;
   width: 45.9%;
+`
+
+export const ContainerTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-top: 100px;
+  padding: 86px;
 `
 
 export const Title = styled.span`
@@ -22,6 +31,7 @@ export const Title = styled.span`
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   color: #3751fe;
+  margin-bottom: 46px;
 `
 
 export const SubTitle = styled.span`
@@ -30,6 +40,50 @@ export const SubTitle = styled.span`
   font-weight: bold;
   font-family: 'Open Sans', sans-serif;
   color: #3751fe;
+  margin-bottom: 28px;
+`
+export const Span = styled.span`
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  font-style: normal;
+  letter-spacing: 0em;
+  text-align: left;
+`
+
+export const ContainerForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 86px;
+`
+export const InputZone = styled.div`
+  width: 554px;
+  height: 74px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  background: #ffffff;
+  border: 1px solid #c1bbbb;
+
+  > label {
+    /* position: absolute; */
+    margin-left: 27px;
+
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Roboto';
+    line-height: 21px;
+
+    color: rgba(0, 0, 0, 0.61);
+  }
 `
 
 export const ContainerRight = styled.div`

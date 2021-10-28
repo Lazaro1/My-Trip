@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useTheme, Theme } from 'contexts/ThemeContext'
-import { ContainerFlexRow, ContainerFlexColumn } from 'styles/container'
 import * as S from './styles'
 import { ButtonSigIn, ButtonJoin } from 'styles/button'
+import { Input } from 'styles/inputs'
 
 const Login: React.FC = () => {
   const { theme, setTheme } = useTheme()
@@ -12,18 +12,23 @@ const Login: React.FC = () => {
     console.log('This is my context Theme ', theme)
   }, [])
 
-  const [isSiginVisible, setIsSiginVisible] = useState(true)
+  // const [isSiginVisible, setIsSiginVisible] = useState(true)
 
   return (
     <S.Wrapper>
       <S.ContainerLeft>
-        <ContainerFlexColumn>
+        <S.ContainerTitle>
           <S.Title>LinkedIn</S.Title>
-          <S.SubTitle>Welcome to your professional community</S.SubTitle>
-          <S.SubTitle style={{ fontSize: '16px', color: '#000000' }}>
-            Welcome Back! Please login your acount
-          </S.SubTitle>
-        </ContainerFlexColumn>
+          <S.SubTitle>Welcome to your </S.SubTitle>
+          <S.SubTitle>professional community</S.SubTitle>
+          <S.Span>Welcome Back! Please login your acount</S.Span>
+        </S.ContainerTitle>
+        <S.ContainerForm>
+          <S.InputZone>
+            <label>Email Address</label>
+            <Input type="email" placeholder="example@email.com" />
+          </S.InputZone>
+        </S.ContainerForm>
       </S.ContainerLeft>
 
       <S.ContainerRight>
