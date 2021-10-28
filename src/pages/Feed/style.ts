@@ -28,6 +28,9 @@ export const BoxTravel = styled.div`
   width: 83%;
   margin-top: 50px;
   padding: 30px;
+  h2 {
+    margin: 15px 0 15px;
+  }
 `
 
 export const ContainerRigth = styled.div`
