@@ -5,6 +5,15 @@ export const ContainerFeed = styled.div`
   align-items: center;
   justify-content: center;
 `
+export const ContainerBody = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  background: #e5e5e5;
+
+  width: 100%;
+`
 export const ContainerFlexRow = styled.div`
   display: flex;
   align-items: center;
@@ -14,6 +23,7 @@ export const ContainerFlexRow = styled.div`
   background: #e5e5e5;
   align-items: flex-start;
 `
+
 export const ContainerLeft = styled.div`
   display: flex;
   flex-direction: column;
@@ -47,4 +57,21 @@ export const BoxInfoPerfil = styled.div`
   background: white;
   border-radius: 15px;
   margin-top: 50px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+export const BackgroundPerfil = styled.img`
+  width: 100%;
+`
+
+export const PerfilImg = styled.img`
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin-top: -50px;
+  border: 10px solid white;
 `
