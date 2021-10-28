@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const ContainerFlex = styled.div`
   display: flex;
   align-items: center;
+  border-radius: 100%;
+
   strong {
     font-size: 1.3rem;
   }
@@ -10,7 +12,12 @@ export const ContainerFlex = styled.div`
 
 export const Profile = styled.img`
   border-radius: 100%;
-  width: 52px;
-  height: 52px;
+
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+
   margin-right: 15px;
+  height: 52px;
+  width: 52px;
 `
