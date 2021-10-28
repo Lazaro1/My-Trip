@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useTheme, Theme } from 'contexts/ThemeContext'
 import { ContainerFlexRow, ContainerFlexColumn } from 'styles/container'
-import { ButtonBorder, ButtonSimple } from 'styles/button'
+import * as S from './styles'
+import { ButtonSigIn, ButtonJoin } from 'styles/button'
 
 const Login: React.FC = () => {
   const { theme, setTheme } = useTheme()
@@ -14,39 +15,25 @@ const Login: React.FC = () => {
   const [isSiginVisible, setIsSiginVisible] = useState(true)
 
   return (
-    <ContainerFlexRow style={{ height: '100%' }}>
-      <ContainerFlexColumn
-        style={{
-          height: '100%',
-          width: '45.9%',
-          justifyContent: 'center'
-        }}
-      >
+    <S.Wrapper>
+      <S.ContainerLeft>
         <ContainerFlexColumn>
-          <h1>ESQUERDA</h1>
+          <S.Title>LinkedIn</S.Title>
+          <S.SubTitle>Welcome to your professional community</S.SubTitle>
+          <S.SubTitle style={{ fontSize: '16px', color: '#000000' }}>
+            Welcome Back! Please login your acount
+          </S.SubTitle>
         </ContainerFlexColumn>
-      </ContainerFlexColumn>
+      </S.ContainerLeft>
 
-      <ContainerFlexColumn
-        style={{ height: '100%', width: '54.1%', background: '#e5e5e5' }}
-      >
-        <ContainerFlexRow
-          style={{
-            width: '81.49%',
-            justifyContent: 'flex-end',
-            marginTop: '10px'
-          }}
-        >
-          <ContainerFlexRow
-            style={{ marginBottom: '191px', marginTop: '41px' }}
-          >
-            <ButtonSimple>Join now</ButtonSimple>
-            <ButtonBorder style={{ marginLeft: '16px' }}>Sing in</ButtonBorder>
-          </ContainerFlexRow>
-        </ContainerFlexRow>
+      <S.ContainerRight>
+        <S.ContainerButton>
+          <ButtonJoin>Join now</ButtonJoin>
+          <ButtonSigIn style={{ marginLeft: '16px' }}>Sing in</ButtonSigIn>
+        </S.ContainerButton>
         <img src="img/logo.png " />
-      </ContainerFlexColumn>
-    </ContainerFlexRow>
+      </S.ContainerRight>
+    </S.Wrapper>
   )
 }
 

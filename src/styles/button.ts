@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ButtonBorder = styled.button`
+export const ButtonSigIn = styled.button`
   width: 152px;
   height: 61px;
 
@@ -17,7 +17,7 @@ export const ButtonBorder = styled.button`
   line-height: 41px;
 `
 
-export const ButtonSimple = styled.button`
+export const ButtonJoin = styled.button`
   width: 143px;
   height: 41px;
 
