@@ -5,9 +5,6 @@ export const BackgroundColor = styled.img`
   height: 100%;
   background-color: #e0dcdc;
 `
-export const ProfileImg = styled.img`
-  border-radius: 100%;
-`
 export const IconImage = styled.img`
   width: 36px;
   height: 36px;

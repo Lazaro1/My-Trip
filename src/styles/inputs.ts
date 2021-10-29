@@ -1,30 +1,27 @@
-/* eslint-disable */
 import styled from 'styled-components'
 
-export const LoginInput = styled.div`
-    width: 85%;
-    height: 10%;
-    border: none;
+export const InputLabel = styled.label`
+  /* position: absolute; */
+  margin: 12px 0px 6px 27px;
+  margin-left: 27px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  line-height: 21px;
 
-    display: flex;
-    align-items: center;
-
-    background-color: #F2F2F2;
-    border-radius: 20px;
-    outline: none;
-    margin-top: 2rem;
+  color: rgba(0, 0, 0, 0.61);
 `
-export const InputInfo = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-
 export const Input = styled.input`
-    background-color: #F2F2F2;
-    outline: none;
-    border: none;
-    margin-top: 0.5rem;
-`
-export const InputName = styled.input`
+  outline: none;
+  border: none;
+  margin: 0px 0px 6px 27px;
 
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 500;
+  line-height: 21.09px;
+  font-family: 'Roboto', sans-serif;
+  color: #3751fe;
 `
+
+export const InputName = styled.input``
