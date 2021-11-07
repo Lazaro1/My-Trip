@@ -18,10 +18,10 @@ const Login: React.FC = () => {
     <S.Wrapper>
       <S.ContainerLeft>
         <S.ContainerTitle>
-          <S.Title>LinkedIn</S.Title>
-          <S.SubTitle>Welcome to your </S.SubTitle>
-          <S.SubTitle>professional community</S.SubTitle>
-          <S.Span>Welcome Back! Please login your acount</S.Span>
+          <S.Title>MyTrip</S.Title>
+          <S.SubTitle>Bem vindo a sua</S.SubTitle>
+          <S.SubTitle>Comunidade de Viagens</S.SubTitle>
+          <S.Span>Entre com sua conta</S.Span>
         </S.ContainerTitle>
         <S.ContainerForm>
           <S.InputZone>
@@ -30,7 +30,7 @@ const Login: React.FC = () => {
           </S.InputZone>
           <S.InputZone>
             <InputLabel>Password</InputLabel>
-            <Input type="Password" placeholder="password" />
+            <Input type="Password" placeholder="************" />
           </S.InputZone>
         </S.ContainerForm>
       </S.ContainerLeft>
@@ -40,7 +40,7 @@ const Login: React.FC = () => {
           <ButtonJoin>Join now</ButtonJoin>
           <ButtonSigIn style={{ marginLeft: '16px' }}>Sing in</ButtonSigIn>
         </S.ContainerButton>
-        <img src="img/logo.png " />
+        <S.LogoImage src="img/iconLogo.png" alt="Imagem Logo" />
       </S.ContainerRight>
     </S.Wrapper>
   )

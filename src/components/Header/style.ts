@@ -44,6 +44,11 @@ export const ContainerFlexIcon = styled.div`
   }
 `
 
+export const IconMenu = styled.img`
+  margin-bottom: 13px;
+  cursor: pointer;
+`
+
 export const ContainerSearch = styled.div`
   display: flex;
   align-items: center;

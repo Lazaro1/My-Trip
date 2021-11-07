@@ -10,10 +10,9 @@ export const Wrapper = styled.div`
 export const ContainerLeft = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-
   height: 100%;
   width: 45.9%;
+  padding: 86px;
 `
 
 export const ContainerTitle = styled.div`
@@ -21,8 +20,7 @@ export const ContainerTitle = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  margin-top: 100px;
-  padding: 86px;
+  margin-top: 10px;
 `
 
 export const Title = styled.span`
@@ -35,12 +33,12 @@ export const Title = styled.span`
 `
 
 export const SubTitle = styled.span`
-  font-size: 36px;
+  font-size: 30px;
   line-height: 36px;
   font-weight: bold;
   font-family: 'Open Sans', sans-serif;
   color: #3751fe;
-  margin-bottom: 28px;
+  margin-bottom: 15px;
 `
 export const Span = styled.span`
   font-size: 18px;
@@ -58,12 +56,11 @@ export const ContainerForm = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-
-  margin-left: 8rem;
 `
 export const InputZone = styled.div`
-  width: 554px;
-  height: 74px;
+  width: 87%;
+  height: 70px;
+  margin-bottom: 5px;
 
   display: flex;
   flex-direction: column;
@@ -72,6 +69,10 @@ export const InputZone = styled.div`
 
   background: #ffffff;
   border: 2px solid #c1bbbb;
+
+  &:hover {
+    border-left: 4px solid blue;
+  }
 `
 
 export const ContainerRight = styled.div`
@@ -94,3 +95,5 @@ export const ContainerButton = styled.div`
   margin-bottom: 191px;
   margin-top: 41px;
 `
+
+export const LogoImage = styled.img``
