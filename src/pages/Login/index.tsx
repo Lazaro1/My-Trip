@@ -3,14 +3,29 @@ import { useTheme, Theme } from 'contexts/ThemeContext'
 import * as S from './styles'
 import { ButtonSigIn, ButtonJoin } from 'styles/button'
 import { Input, InputLabel } from 'styles/inputs'
+import { useRouter } from 'next/router'
 
 const Login: React.FC = () => {
   const { theme, setTheme } = useTheme()
+
+  const route = useRouter()
+
+  const [email, setEmail] = useState('')
+
+  const [password, setPassword] = useState('')
 
   useEffect(() => {
     setTheme(Theme.Dark)
     console.log('This is my context Theme ', theme)
   }, [])
+
+  const handleSignIn = () => {
+    if (!email || !password) {
+      alert('senha em branco')
+    } else {
+      route.push('/Feed')
+    }
+  }
 
   // const [isSiginVisible, setIsSiginVisible] = useState(true)
 
@@ -26,12 +41,24 @@ const Login: React.FC = () => {
         <S.ContainerForm>
           <S.InputZone>
             <InputLabel>Email Address</InputLabel>
-            <Input type="email" placeholder="example@email.com" />
+            <Input
+              type="email"
+              placeholder="example@email.com"
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </S.InputZone>
           <S.InputZone>
             <InputLabel>Password</InputLabel>
-            <Input type="Password" placeholder="************" />
+            <Input
+              type="Password"
+              placeholder="************"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </S.InputZone>
+
+          <S.ButtonSingIn type="submit" onClick={(e) => handleSignIn(e)}>
+            Login
+          </S.ButtonSingIn>
         </S.ContainerForm>
       </S.ContainerLeft>
 

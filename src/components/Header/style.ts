@@ -29,23 +29,14 @@ export const ContainerMenu = styled.div`
 `
 
 export const ContainerFlexIcon = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 90px;
-  justify-content: space-between;
 
-  img {
-    margin-bottom: 13px;
-    cursor: pointer;
-  }
   strong {
     cursor: pointer;
   }
 `
 
 export const IconMenu = styled.img`
-  margin-bottom: 13px;
   cursor: pointer;
 `
 

@@ -74,6 +74,14 @@ export const InputZone = styled.div`
     border-left: 4px solid blue;
   }
 `
+export const ButtonSingIn = styled.button`
+  background: #3751fe;
+  width: 129px;
+  height: 54px;
+  color: white;
+  text-align: center;
+  border: none;
+`
 
 export const ContainerRight = styled.div`
   display: flex;
