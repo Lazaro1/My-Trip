@@ -14,6 +14,8 @@ const Login: React.FC = () => {
 
   const [password, setPassword] = useState('')
 
+  // const emailAuth = localStorage.getItem('email')
+
   useEffect(() => {
     setTheme(Theme.Dark)
     console.log('This is my context Theme ', theme)
@@ -24,6 +26,22 @@ const Login: React.FC = () => {
       alert('Preencha os campos de usuário e senha')
     } else {
       route.push('/Feed')
+      // console.log(emailAuth)
+    }
+  }
+
+  const createLogin = () => {
+    if (!email || !password) {
+      alert('Preencha os campos de usuário e senha')
+    } else {
+      localStorage.setItem('email', email)
+
+      setEmail(email)
+
+      localStorage.setItem('senha', password)
+
+      setPassword(password)
+      setIsSiginVisible(true)
     }
   }
 
@@ -97,12 +115,7 @@ const Login: React.FC = () => {
                 />
               </S.InputZone>
 
-              <S.ButtonSingIn
-                type="submit"
-                onClick={() => {
-                  setIsSiginVisible(true)
-                }}
-              >
+              <S.ButtonSingIn type="submit" onClick={(e) => createLogin(e)}>
                 Registrar
               </S.ButtonSingIn>
             </S.ContainerForm>
