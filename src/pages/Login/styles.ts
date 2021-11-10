@@ -75,15 +75,19 @@ export const InputZone = styled.div`
   }
 `
 export const ButtonSingIn = styled.button`
-  background: #3751fe;
+  background: #0c31f1;
   width: 129px;
   height: 54px;
   color: white;
   text-align: center;
   border: none;
   cursor: pointer;
-  &:active {
-    opacity: 0.9;
+  &:hover {
+    background: white;
+    border: 2px solid #0c31f1;
+    color: #0c31f1;
+    font-weight: bold;
+    font-size: 16px;
   }
 `
 
@@ -124,8 +128,9 @@ export const ButtonSingUp = styled.button`
   font-size: 36px;
   line-height: 41px;
   cursor: pointer;
-  &:active {
-    opacity: 0.5;
+  &:hover {
+    background: #0c31f1;
+    color: white;
   }
 `
 

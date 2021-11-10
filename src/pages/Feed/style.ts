@@ -75,3 +75,18 @@ export const PerfilImg = styled.img`
   margin-top: -50px;
   border: 10px solid white;
 `
+
+export const ButtonNewTravel = styled.button`
+  height: 25px;
+  width: 80%;
+  background: #3751fe;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    width: 82%;
+    height: 28px;
+    font-size: 15px;
+  }
+`

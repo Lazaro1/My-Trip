@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTheme, Theme } from 'contexts/ThemeContext'
 import * as S from './styles'
-import { ButtonSigIn, ButtonJoin } from 'styles/button'
 import { Input, InputLabel } from 'styles/inputs'
 import { useRouter } from 'next/router'
 
@@ -14,7 +13,11 @@ const Login: React.FC = () => {
 
   const [password, setPassword] = useState('')
 
-  // const emailAuth = localStorage.getItem('email')
+  const [confimPassword, setConfirmPassword] = useState('')
+
+  const emailAuth = localStorage.getItem('email')
+
+  const passwordAuth = localStorage.getItem('senha')
 
   useEffect(() => {
     setTheme(Theme.Dark)
@@ -24,15 +27,18 @@ const Login: React.FC = () => {
   const handleSignIn = () => {
     if (!email || !password) {
       alert('Preencha os campos de usuário e senha')
-    } else {
+    } else if (emailAuth == email && passwordAuth == password) {
       route.push('/Feed')
-      // console.log(emailAuth)
+    } else {
+      alert('Usuário ou senha digitado incorretamente')
     }
   }
 
   const createLogin = () => {
     if (!email || !password) {
       alert('Preencha os campos de usuário e senha')
+    } else if (password != confimPassword) {
+      alert('Confirmação de senha incorreta')
     } else {
       localStorage.setItem('email', email)
 
@@ -111,7 +117,7 @@ const Login: React.FC = () => {
                 <Input
                   type="Password"
                   placeholder="************"
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </S.InputZone>
 

@@ -1,49 +1,49 @@
 import Header from 'components/Header'
 import ProfileImg from 'components/ProfileImg'
-
-import {
-  ContainerFeed,
-  ContainerFlexRow,
-  ContainerLeft,
-  ContainerRigth,
-  BoxInfoPerfil,
-  BoxTravel,
-  PerfilImg,
-  BackgroundPerfil
-} from './style'
+import * as S from './style'
+import { useRouter } from 'next/router'
 
 const Feed: React.FC = () => {
+  const route = useRouter()
+
+  const buttonLogin = () => {
+    route.push('/')
+  }
+
   return (
-    <ContainerFeed>
+    <S.ContainerFeed>
       <Header />
 
-      <ContainerFlexRow>
-        <ContainerLeft>
-          <BoxTravel>
+      <S.ContainerFlexRow>
+        <S.ContainerLeft>
+          <S.BoxTravel>
             <ProfileImg />
             <h2>Estrada Real</h2>
             <img src="img/cachoeira.jpg" alt="" />
-          </BoxTravel>
-          <BoxTravel>
+          </S.BoxTravel>
+          <S.BoxTravel>
             <ProfileImg />
             <h2>Estrada Real</h2>
             <img src="img/cachoeira.jpg" alt="" />
-          </BoxTravel>
-          <BoxTravel>
+          </S.BoxTravel>
+          <S.BoxTravel>
             <ProfileImg />
             <h2>Estrada Real</h2>
             <img src="img/cachoeira.jpg" alt="" />
-          </BoxTravel>
-        </ContainerLeft>
+          </S.BoxTravel>
+        </S.ContainerLeft>
 
-        <ContainerRigth>
-          <BoxInfoPerfil>
-            <BackgroundPerfil src="img/retangulo.png" />
-            <PerfilImg src="img/profile.jpg" />
-          </BoxInfoPerfil>
-        </ContainerRigth>
-      </ContainerFlexRow>
-    </ContainerFeed>
+        <S.ContainerRigth>
+          <S.BoxInfoPerfil>
+            <S.BackgroundPerfil src="img/retangulo.png" />
+            <S.PerfilImg src="img/profile.jpg" />
+            <S.ButtonNewTravel onClick={buttonLogin}>
+              Nova viagem
+            </S.ButtonNewTravel>
+          </S.BoxInfoPerfil>
+        </S.ContainerRigth>
+      </S.ContainerFlexRow>
+    </S.ContainerFeed>
   )
 }
 
