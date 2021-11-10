@@ -81,6 +81,10 @@ export const ButtonSingIn = styled.button`
   color: white;
   text-align: center;
   border: none;
+  cursor: pointer;
+  &:active {
+    opacity: 0.9;
+  }
 `
 
 export const ContainerRight = styled.div`
@@ -102,6 +106,27 @@ export const ContainerButton = styled.div`
 
   margin-bottom: 191px;
   margin-top: 41px;
+`
+
+export const ButtonSingUp = styled.button`
+  width: 152px;
+  height: 61px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #0c31f1;
+  box-sizing: border-box;
+  background: #e5e5e5;
+
+  font-family: Helvetica;
+  color: #0c31f1;
+  font-size: 36px;
+  line-height: 41px;
+  cursor: pointer;
+  &:active {
+    opacity: 0.5;
+  }
 `
 
 export const LogoImage = styled.img``
