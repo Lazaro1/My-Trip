@@ -9,10 +9,6 @@ import withAuth from 'utils/withAuth'
 const Feed: React.FC = () => {
   const route = useRouter()
 
-  const buttonLogin = () => {
-    route.push('/')
-  }
-
   return (
     <S.ContainerFeed>
       <Header />
@@ -40,7 +36,7 @@ const Feed: React.FC = () => {
           <S.BoxInfoPerfil>
             <S.BackgroundPerfil src="img/retangulo.png" />
             <S.PerfilImg src="img/profile.jpg" />
-            <S.ButtonNewTravel onClick={buttonLogin}>
+            <S.ButtonNewTravel onClick={() => route.push('/NewTravel')}>
               Nova viagem
             </S.ButtonNewTravel>
           </S.BoxInfoPerfil>

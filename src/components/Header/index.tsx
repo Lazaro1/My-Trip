@@ -19,14 +19,14 @@ const Header: React.FC = () => {
         <img src="img/iconLogo.png" alt="" />
       </ContainerLogo>
       <ContainerMenu>
-        <ContainerFlexIcon>
+        <ContainerFlexIcon onClick={() => route.push('/Feed')}>
           <IconImage src="img/iconFeed.svg" />
           <strong>FEED</strong>
         </ContainerFlexIcon>
         <ContainerFlexIcon>
           <IconImage src="img/iconUsers.svg" />
           <strong>AMIGOS</strong>
-        </ContainerFlexIcon>{' '}
+        </ContainerFlexIcon>
         <ContainerFlexIcon>
           <IconImage src="img/iconTravel.svg" />
           <strong>VIAGENS</strong>

@@ -14,8 +14,15 @@ const Profile: React.FC = () => {
       <S.ContainerFlexRow>
         <S.ContainerLeft>
           <S.BoxProfileInfo>
-            <img src="img/BackProfile.png" alt="" />
-            <ProfileImg />
+            <img
+              style={{ borderRadius: '15px' }}
+              src="img/BackProfile.png"
+              alt="Background profile"
+            />
+            <S.BoxProfileRow>
+              <S.PerfilImg src="img/profile.jpg" />
+              <h1>Henrique Nobre</h1>
+            </S.BoxProfileRow>
           </S.BoxProfileInfo>
           <S.BoxTravel>
             <ProfileImg />
@@ -38,7 +45,9 @@ const Profile: React.FC = () => {
           <S.BoxInfoPerfil>
             <S.BackgroundPerfil src="img/retangulo.png" />
             <S.PerfilImg src="img/profile.jpg" />
-            <S.ButtonNewTravel>Nova viagem</S.ButtonNewTravel>
+            <S.ButtonNewTravel onClick={() => route.push('/NewTravel')}>
+              Nova viagem
+            </S.ButtonNewTravel>
           </S.BoxInfoPerfil>
         </S.ContainerRigth>
       </S.ContainerFlexRow>
