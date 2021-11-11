@@ -30,6 +30,16 @@ export const ContainerLeft = styled.div`
   align-items: center;
   width: 71%;
 `
+export const BoxProfileInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 15px;
+  width: 83%;
+  margin-top: 50px;
+  padding: 30px;
+`
+
 export const BoxTravel = styled.div`
   display: flex;
   flex-direction: column;
@@ -38,9 +48,19 @@ export const BoxTravel = styled.div`
   width: 83%;
   margin-top: 50px;
   padding: 30px;
+  h1 {
+    margin-top: 15px;
+  }
   h2 {
     margin: 15px 0 15px;
   }
+`
+
+export const BoxInput = styled.input`
+  width: 82%;
+  border-radius: 8px;
+  border: 2px solid #e5e5e5;
+  padding: 4px;
 `
 
 export const ContainerRigth = styled.div`
@@ -72,21 +92,29 @@ export const PerfilImg = styled.img`
   border-radius: 100%;
   object-fit: cover;
   object-position: center;
-  margin-top: -50px;
+  margin-top: -20px;
   border: 10px solid white;
 `
 
+export const TableExpenses = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #e5e5e5;
+  th {
+    border: 2px solid #e5e5e5;
+  }
+`
+
 export const ButtonNewTravel = styled.button`
-  height: 25px;
-  width: 80%;
+  width: 30%;
+  padding: 4px;
+  margin-top: 15px;
   background: #3751fe;
   border-radius: 8px;
   border: none;
   color: white;
   cursor: pointer;
   &:hover {
-    width: 82%;
-    height: 28px;
     font-size: 15px;
   }
 `

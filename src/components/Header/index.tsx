@@ -8,24 +8,27 @@ import {
 } from './style'
 import { Input } from 'styles/inputs'
 import ProfileImg from 'components/ProfileImg'
+import { IconImage } from 'styles/image'
+import { useRouter } from 'next/router'
 
 const Header: React.FC = () => {
+  const route = useRouter()
   return (
     <ContainerFixedTop>
       <ContainerLogo>
         <img src="img/iconLogo.png" alt="" />
       </ContainerLogo>
       <ContainerMenu>
-        <ContainerFlexIcon>
-          <img src="img/IconFeed.svg" alt="" />
+        <ContainerFlexIcon onClick={() => route.push('/Feed')}>
+          <IconImage src="img/iconFeed.svg" />
           <strong>FEED</strong>
         </ContainerFlexIcon>
         <ContainerFlexIcon>
-          <img src="img/IconUsers.svg" alt="" />
+          <IconImage src="img/iconUsers.svg" />
           <strong>AMIGOS</strong>
-        </ContainerFlexIcon>{' '}
+        </ContainerFlexIcon>
         <ContainerFlexIcon>
-          <img src="img/IconTravel.svg" alt="" />
+          <IconImage src="img/iconTravel.svg" />
           <strong>VIAGENS</strong>
         </ContainerFlexIcon>
       </ContainerMenu>
@@ -33,7 +36,7 @@ const Header: React.FC = () => {
         <img src="img/iconSearch.svg" />
         <Input placeholder="Pesquisa" />
       </ContainerSearch>
-      <ContainerProfile>
+      <ContainerProfile onClick={() => route.push('/Profile')}>
         <ProfileImg />
       </ContainerProfile>
     </ContainerFixedTop>

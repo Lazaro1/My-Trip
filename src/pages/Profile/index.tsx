@@ -2,11 +2,9 @@ import Header from 'components/Header'
 import ProfileImg from 'components/ProfileImg'
 import * as S from './style'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import Cookies from 'js-cookie'
 import withAuth from 'utils/withAuth'
 
-const Feed: React.FC = () => {
+const Profile: React.FC = () => {
   const route = useRouter()
 
   return (
@@ -15,6 +13,17 @@ const Feed: React.FC = () => {
 
       <S.ContainerFlexRow>
         <S.ContainerLeft>
+          <S.BoxProfileInfo>
+            <img
+              style={{ borderRadius: '15px' }}
+              src="img/BackProfile.png"
+              alt="Background profile"
+            />
+            <S.BoxProfileRow>
+              <S.PerfilImg src="img/profile.jpg" />
+              <h1>Henrique Nobre</h1>
+            </S.BoxProfileRow>
+          </S.BoxProfileInfo>
           <S.BoxTravel>
             <ProfileImg />
             <h2>Estrada Real</h2>
@@ -46,4 +55,4 @@ const Feed: React.FC = () => {
   )
 }
 
-export default withAuth(Feed)
+export default withAuth(Profile)

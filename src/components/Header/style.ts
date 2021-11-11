@@ -29,19 +29,15 @@ export const ContainerMenu = styled.div`
 `
 
 export const ContainerFlexIcon = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 90px;
-  justify-content: space-between;
 
-  img {
-    margin-bottom: 13px;
-    cursor: pointer;
-  }
   strong {
     cursor: pointer;
   }
+`
+
+export const IconMenu = styled.img`
+  cursor: pointer;
 `
 
 export const ContainerSearch = styled.div`
@@ -59,4 +55,5 @@ export const ContainerProfile = styled.div`
   justify-content: center;
   border-left: 1px solid #f4f4f4;
   padding-left: 30px;
+  cursor: pointer;
 `

@@ -1,46 +1,148 @@
 import { useState, useEffect } from 'react'
 import { useTheme, Theme } from 'contexts/ThemeContext'
 import * as S from './styles'
-import { ButtonSigIn, ButtonJoin } from 'styles/button'
 import { Input, InputLabel } from 'styles/inputs'
+import { useRouter } from 'next/router'
+import Cookie from 'js-cookie'
+import addDays from 'date-fns/addDays'
 
 const Login: React.FC = () => {
   const { theme, setTheme } = useTheme()
+  const route = useRouter()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confimPassword, setConfirmPassword] = useState('')
 
   useEffect(() => {
     setTheme(Theme.Dark)
     console.log('This is my context Theme ', theme)
   }, [])
 
-  // const [isSiginVisible, setIsSiginVisible] = useState(true)
+  const handleSignIn = () => {
+    const resultUser = localStorage.getItem('userAuth')
+    const usersLogged = resultUser ? JSON.parse(resultUser) : {}
+
+    if (!email || !password) {
+      alert('Preencha os campos de usuário e senha')
+    } else if (usersLogged.email == email && usersLogged.password == password) {
+      Cookie.set('token', 'token-here', {
+        expires: addDays(new Date(), 1)
+      })
+
+      route.push('/Feed')
+    } else {
+      alert('Usuário ou senha digitado incorretamente')
+    }
+  }
+
+  const createLogin = () => {
+    const userLogin = {
+      email: email,
+      password: password
+    }
+
+    if (!email || !password) {
+      alert('Preencha os campos de usuário e senha')
+    } else if (password != confimPassword) {
+      alert('Confirmação de senha incorreta')
+    } else {
+      localStorage.setItem('userAuth', JSON.stringify(userLogin))
+
+      setIsSiginVisible(true)
+    }
+  }
+
+  const [isSiginVisible, setIsSiginVisible] = useState(true)
 
   return (
     <S.Wrapper>
       <S.ContainerLeft>
-        <S.ContainerTitle>
-          <S.Title>LinkedIn</S.Title>
-          <S.SubTitle>Welcome to your </S.SubTitle>
-          <S.SubTitle>professional community</S.SubTitle>
-          <S.Span>Welcome Back! Please login your acount</S.Span>
-        </S.ContainerTitle>
-        <S.ContainerForm>
-          <S.InputZone>
-            <InputLabel>Email Address</InputLabel>
-            <Input type="email" placeholder="example@email.com" />
-          </S.InputZone>
-          <S.InputZone>
-            <InputLabel>Password</InputLabel>
-            <Input type="Password" placeholder="password" />
-          </S.InputZone>
-        </S.ContainerForm>
+        {isSiginVisible ? (
+          <>
+            <S.ContainerTitle>
+              <S.Title>MyTrip</S.Title>
+              <S.SubTitle>Bem vindo a sua</S.SubTitle>
+              <S.SubTitle>Comunidade de Viagens</S.SubTitle>
+              <S.Span>Entre com sua conta</S.Span>
+            </S.ContainerTitle>
+            <S.ContainerForm>
+              <S.InputZone>
+                <InputLabel>Email Address</InputLabel>
+                <Input
+                  type="email"
+                  placeholder="example@email.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </S.InputZone>
+              <S.InputZone>
+                <InputLabel>Password</InputLabel>
+                <Input
+                  type="Password"
+                  placeholder="************"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </S.InputZone>
+
+              <S.ButtonSingIn type="submit" onClick={(e) => handleSignIn(e)}>
+                Login
+              </S.ButtonSingIn>
+            </S.ContainerForm>
+          </>
+        ) : (
+          <>
+            <S.ContainerTitle>
+              <S.Title>MyTrip</S.Title>
+              <S.SubTitle>Bem vindo a sua</S.SubTitle>
+              <S.SubTitle>Comunidade de Viagens</S.SubTitle>
+              <S.Span>Crie sua conta</S.Span>
+            </S.ContainerTitle>
+            <S.ContainerForm>
+              <S.InputZone>
+                <InputLabel>Email Address</InputLabel>
+                <Input
+                  type="email"
+                  placeholder="example@email.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </S.InputZone>
+              <S.InputZone>
+                <InputLabel>Password</InputLabel>
+                <Input
+                  type="Password"
+                  placeholder="************"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </S.InputZone>
+              <S.InputZone>
+                <InputLabel>Confirm Password</InputLabel>
+                <Input
+                  type="Password"
+                  placeholder="************"
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+              </S.InputZone>
+
+              <S.ButtonSingIn type="submit" onClick={(e) => createLogin(e)}>
+                Registrar
+              </S.ButtonSingIn>
+            </S.ContainerForm>
+          </>
+        )}
       </S.ContainerLeft>
 
       <S.ContainerRight>
         <S.ContainerButton>
-          <ButtonJoin>Join now</ButtonJoin>
-          <ButtonSigIn style={{ marginLeft: '16px' }}>Sing in</ButtonSigIn>
+          {/*<ButtonJoin>Crie sua conta</ButtonJoin>*/}
+          <S.ButtonSingUp
+            onClick={() => {
+              setIsSiginVisible(false)
+            }}
+            style={{ marginLeft: '16px' }}
+          >
+            Registar
+          </S.ButtonSingUp>
         </S.ContainerButton>
-        <img src="img/logo.png " />
+        <S.LogoImage src="img/iconLogo.png" alt="Imagem Logo" />
       </S.ContainerRight>
     </S.Wrapper>
   )
