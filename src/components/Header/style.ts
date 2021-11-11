@@ -55,4 +55,5 @@ export const ContainerProfile = styled.div`
   justify-content: center;
   border-left: 1px solid #f4f4f4;
   padding-left: 30px;
+  cursor: pointer;
 `

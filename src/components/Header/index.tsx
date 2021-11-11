@@ -9,8 +9,10 @@ import {
 import { Input } from 'styles/inputs'
 import ProfileImg from 'components/ProfileImg'
 import { IconImage } from 'styles/image'
+import { useRouter } from 'next/router'
 
 const Header: React.FC = () => {
+  const route = useRouter()
   return (
     <ContainerFixedTop>
       <ContainerLogo>
@@ -34,7 +36,7 @@ const Header: React.FC = () => {
         <img src="img/iconSearch.svg" />
         <Input placeholder="Pesquisa" />
       </ContainerSearch>
-      <ContainerProfile>
+      <ContainerProfile onClick={() => route.push('/Profile')}>
         <ProfileImg />
       </ContainerProfile>
     </ContainerFixedTop>
