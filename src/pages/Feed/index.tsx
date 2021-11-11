@@ -2,9 +2,19 @@ import Header from 'components/Header'
 import ProfileImg from 'components/ProfileImg'
 import * as S from './style'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import Cookies from 'js-cookie'
 
 const Feed: React.FC = () => {
   const route = useRouter()
+
+  useEffect(() => {
+    const token = Cookies.get('token')
+
+    if (!token) {
+      route.push('/')
+    }
+  }, [])
 
   const buttonLogin = () => {
     route.push('/')

@@ -3,21 +3,15 @@ import { useTheme, Theme } from 'contexts/ThemeContext'
 import * as S from './styles'
 import { Input, InputLabel } from 'styles/inputs'
 import { useRouter } from 'next/router'
+import Cookie from 'js-cookie'
+import addDays from 'date-fns/addDays'
 
 const Login: React.FC = () => {
   const { theme, setTheme } = useTheme()
-
   const route = useRouter()
-
   const [email, setEmail] = useState('')
-
   const [password, setPassword] = useState('')
-
   const [confimPassword, setConfirmPassword] = useState('')
-
-  const emailAuth = localStorage.getItem('email')
-
-  const passwordAuth = localStorage.getItem('senha')
 
   useEffect(() => {
     setTheme(Theme.Dark)
@@ -25,9 +19,16 @@ const Login: React.FC = () => {
   }, [])
 
   const handleSignIn = () => {
+    const resultUser = localStorage.getItem('userAuth')
+    const usersLogged = resultUser ? JSON.parse(resultUser) : {}
+
     if (!email || !password) {
       alert('Preencha os campos de usuário e senha')
-    } else if (emailAuth == email && passwordAuth == password) {
+    } else if (usersLogged.email == email && usersLogged.password == password) {
+      Cookie.set('token', 'token-here', {
+        expires: addDays(new Date(), 1)
+      })
+
       route.push('/Feed')
     } else {
       alert('Usuário ou senha digitado incorretamente')
@@ -35,18 +36,18 @@ const Login: React.FC = () => {
   }
 
   const createLogin = () => {
+    const userLogin = {
+      email: email,
+      password: password
+    }
+
     if (!email || !password) {
       alert('Preencha os campos de usuário e senha')
     } else if (password != confimPassword) {
       alert('Confirmação de senha incorreta')
     } else {
-      localStorage.setItem('email', email)
+      localStorage.setItem('userAuth', JSON.stringify(userLogin))
 
-      setEmail(email)
-
-      localStorage.setItem('senha', password)
-
-      setPassword(password)
       setIsSiginVisible(true)
     }
   }
