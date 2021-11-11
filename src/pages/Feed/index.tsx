@@ -4,17 +4,10 @@ import * as S from './style'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import Cookies from 'js-cookie'
+import withAuth from 'utils/withAuth'
 
 const Feed: React.FC = () => {
   const route = useRouter()
-
-  useEffect(() => {
-    const token = Cookies.get('token')
-
-    if (!token) {
-      route.push('/')
-    }
-  }, [])
 
   const buttonLogin = () => {
     route.push('/')
@@ -57,4 +50,4 @@ const Feed: React.FC = () => {
   )
 }
 
-export default Feed
+export default withAuth(Feed)
