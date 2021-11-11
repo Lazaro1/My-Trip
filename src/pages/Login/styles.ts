@@ -82,13 +82,13 @@ export const ButtonSingIn = styled.button`
   text-align: center;
   border: none;
   cursor: pointer;
+  font-size: 18px;
   &:hover {
     background: white;
     border: 2px solid #0c31f1;
     color: #0c31f1;
-    font-weight: bold;
-    font-size: 16px;
   }
+  @key-fre;
 `
 
 export const ContainerRight = styled.div`
