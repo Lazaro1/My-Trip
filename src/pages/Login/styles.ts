@@ -12,15 +12,14 @@ export const ContainerLeft = styled.div`
   flex-direction: column;
   height: 100%;
   width: 45.9%;
-  padding: 86px;
+  padding-top: 2%;
+  padding-left: 5%;
 `
 
 export const ContainerTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
-  margin-top: 10px;
 `
 
 export const Title = styled.span`
@@ -41,11 +40,12 @@ export const SubTitle = styled.span`
   margin-bottom: 15px;
 `
 export const Span = styled.span`
+  margin-bottom: 7%;
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
-  color: #000000;
+  color: rgba(0, 0, 0, 0.61);
   font-style: normal;
   letter-spacing: 0em;
   text-align: left;
@@ -74,10 +74,28 @@ export const InputZone = styled.div`
     border-left: 4px solid blue;
   }
 `
+
+export const ContainerRow = styled.div`
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.61);
+  label {
+    margin-left: 5px;
+  }
+  a {
+    margin-left: 36%;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.61);
+  }
+`
+
 export const ButtonSingIn = styled.button`
   background: #0c31f1;
   width: 129px;
   height: 54px;
+  margin-top: 3%;
   color: white;
   text-align: center;
   border: none;
@@ -88,7 +106,6 @@ export const ButtonSingIn = styled.button`
     border: 2px solid #0c31f1;
     color: #0c31f1;
   }
-  @key-fre;
 `
 
 export const ContainerRight = styled.div`

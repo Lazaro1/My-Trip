@@ -82,11 +82,35 @@ const Login: React.FC = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </S.InputZone>
-
-              <S.ButtonSingIn type="submit" onClick={(e) => handleSignIn(e)}>
-                Login
-              </S.ButtonSingIn>
             </S.ContainerForm>
+            <S.ContainerRow>
+              <S.ContainerRow>
+                <input type="checkbox" />
+                <label htmlFor="">Lembra-me</label>
+              </S.ContainerRow>
+              <a href="">Esqueceu sua senha</a>
+            </S.ContainerRow>
+            <S.ButtonSingIn type="submit" onClick={(e) => handleSignIn(e)}>
+              Login
+            </S.ButtonSingIn>
+            <S.ContainerRow
+              style={{
+                fontSize: '18px',
+                marginTop: '5%',
+                justifyContent: 'flex-start'
+              }}
+            >
+              <p>Ou logar com</p>
+              <a
+                style={{
+                  color: '#3751fe',
+                  marginLeft: '10px'
+                }}
+                href=""
+              >
+                Google
+              </a>
+            </S.ContainerRow>
           </>
         ) : (
           <>
