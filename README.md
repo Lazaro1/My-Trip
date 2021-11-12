@@ -20,7 +20,7 @@
  - Clear your docker containers `docker system prune --all`
 
 ### Tips
- - Give linux folder permission `sudo chown -R userName:password .`
+ - Give linux folder permission `sudo chown -R userName .`
  - Enable VS Code lint on save ctrl + shift + p -> Opensettings(JSON) -> add this settings:
     "editor.formatOnSave": true,
     "prettier.eslintIntegration": true
