@@ -51,7 +51,7 @@ export const Span = styled.span`
   text-align: left;
 `
 
-export const ContainerForm = styled.div`
+export const ContainerForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;

@@ -52,6 +52,18 @@ const Login: React.FC = () => {
     }
   }
 
+  const enterLogin = (event) => {
+    if (event.keyCode === 13) {
+      handleSignIn()
+    }
+  }
+
+  const enterRegister = (event) => {
+    if (event.keyCode === 13) {
+      createLogin()
+    }
+  }
+
   const [isSiginVisible, setIsSiginVisible] = useState(true)
 
   return (
@@ -80,6 +92,7 @@ const Login: React.FC = () => {
                   type="Password"
                   placeholder="************"
                   onChange={(e) => setPassword(e.target.value)}
+                  onKeyDown={(e) => enterLogin(e)}
                 />
               </S.InputZone>
             </S.ContainerForm>
@@ -143,6 +156,7 @@ const Login: React.FC = () => {
                   type="Password"
                   placeholder="************"
                   onChange={(e) => setConfirmPassword(e.target.value)}
+                  onKeyDown={(e) => enterRegister(e)}
                 />
               </S.InputZone>
 
