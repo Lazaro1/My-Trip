@@ -36,11 +36,45 @@ export const BoxTravel = styled.div`
   background: white;
   border-radius: 15px;
   width: 83%;
-  margin-top: 50px;
+  margin-top: 30px;
   padding: 30px;
   h2 {
     margin: 15px 0 15px;
   }
+`
+
+export const ContainerIconAction = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  img {
+    cursor: pointer;
+  }
+`
+
+export const ContainerComent = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  img {
+    border-radius: 100%;
+
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+
+    margin-right: 15px;
+    height: 40px;
+    width: 40px;
+  }
+`
+
+export const BoxInput = styled.input`
+  width: 82%;
+  border-radius: 8px;
+  border: 2px solid #e5e5e5;
+  padding: 4px;
 `
 
 export const ContainerRigth = styled.div`
@@ -53,15 +87,48 @@ export const ContainerRigth = styled.div`
 
 export const BoxInfoPerfil = styled.div`
   width: 70%;
-  height: 500px;
+  margin-top: 30px;
+  padding-bottom: 15px;
   background: white;
   border-radius: 15px;
-  margin-top: 50px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
 `
+export const BoxInfoRigth = styled.div`
+  width: 70%;
+  margin-top: 10px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 15px 0 15px 0;
+  h2 {
+    width: 80%;
+    text-align: center;
+    border-bottom: 2px solid #e5e5e5;
+  }
+  h3 {
+    background: #e9f0f8;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+`
+export const BoxInfoRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  margin-top: 15px;
+  p {
+    margin-left: 10px;
+  }
+`
+
 export const BackgroundPerfil = styled.img`
   width: 100%;
 `

@@ -36,7 +36,7 @@ export const BoxProfileInfo = styled.div`
   background: white;
   border-radius: 15px;
   width: 83%;
-  margin-top: 50px;
+  margin-top: 30px;
   padding: 30px;
 `
 
@@ -76,7 +76,7 @@ export const BoxInfoPerfil = styled.div`
   height: 500px;
   background: white;
   border-radius: 15px;
-  margin-top: 50px;
+  margin-top: 30px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
