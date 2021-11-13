@@ -3,6 +3,7 @@ import ProfileImg from 'components/ProfileImg'
 import * as S from './style'
 import { useRouter } from 'next/router'
 import withAuth from 'utils/withAuth'
+import SideBar from 'components/SideBar'
 
 const Profile: React.FC = () => {
   const route = useRouter()
@@ -42,13 +43,7 @@ const Profile: React.FC = () => {
         </S.ContainerLeft>
 
         <S.ContainerRigth>
-          <S.BoxInfoPerfil>
-            <S.BackgroundPerfil src="img/retangulo.png" />
-            <S.PerfilImg src="img/profile.jpg" />
-            <S.ButtonNewTravel onClick={() => route.push('/NewTravel')}>
-              Nova viagem
-            </S.ButtonNewTravel>
-          </S.BoxInfoPerfil>
+          <SideBar />
         </S.ContainerRigth>
       </S.ContainerFlexRow>
     </S.ContainerFeed>
