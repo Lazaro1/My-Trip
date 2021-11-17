@@ -125,7 +125,7 @@ export const ContainerButton = styled.div`
 
   width: 81.49%;
 
-  margin-bottom: 191px;
+  margin-bottom: 50px;
   margin-top: 41px;
 `
 
@@ -152,5 +152,5 @@ export const ButtonSingUp = styled.button`
 `
 
 export const LogoImage = styled.img`
-  width: 150px;
+  width: 400px;
 `

@@ -180,7 +180,7 @@ const Login: React.FC = () => {
             Registar
           </S.ButtonSingUp>
         </S.ContainerButton>
-        <S.LogoImage src="img/iconLogo.png" alt="Imagem Logo" />
+        <S.LogoImage src="img/LogoLogin.png" alt="Imagem Logo" />
       </S.ContainerRight>
     </S.Wrapper>
   )

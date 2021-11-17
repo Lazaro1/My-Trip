@@ -19,7 +19,7 @@ export const ContainerLogo = styled.div`
 
   img {
     width: auto;
-    height: 50px;
+    height: 150px;
   }
 `
 
