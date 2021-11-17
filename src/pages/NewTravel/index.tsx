@@ -2,6 +2,7 @@ import Header from 'components/Header'
 import * as S from './style'
 import { useRouter } from 'next/router'
 import withAuth from 'utils/withAuth'
+import SideBar from 'components/SideBar'
 
 const NewTravel: React.FC = () => {
   const route = useRouter()
@@ -69,10 +70,7 @@ const NewTravel: React.FC = () => {
         </S.ContainerLeft>
 
         <S.ContainerRigth>
-          <S.BoxInfoPerfil>
-            <S.BackgroundPerfil src="img/retangulo.png" />
-            <S.PerfilImg src="img/profile.jpg" />
-          </S.BoxInfoPerfil>
+          <SideBar />
         </S.ContainerRigth>
       </S.ContainerFlexRow>
     </S.ContainerFeed>

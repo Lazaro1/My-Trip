@@ -50,6 +50,13 @@ export const BoxProfileRow = styled.div`
   }
 `
 
+export const BoxProfileStatus = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+`
+
 export const BoxTravel = styled.div`
   display: flex;
   flex-direction: column;
@@ -61,6 +68,47 @@ export const BoxTravel = styled.div`
   h2 {
     margin: 15px 0 15px;
   }
+`
+
+export const TravelImg = styled.img`
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+`
+
+export const ContainerIconAction = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  img {
+    cursor: pointer;
+  }
+`
+
+export const ContainerComent = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  img {
+    border-radius: 100%;
+
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+
+    margin-right: 15px;
+    height: 40px;
+    width: 40px;
+  }
+`
+
+export const BoxInput = styled.input`
+  width: 82%;
+  border-radius: 8px;
+  border: 2px solid #e5e5e5;
+  padding: 4px;
 `
 
 export const ContainerRigth = styled.div`

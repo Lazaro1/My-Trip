@@ -42,12 +42,6 @@ export const BoxTravel = styled.div`
     margin: 15px 0 15px;
   }
 `
-export const TravelImg = styled.img`
-  height: 400px;
-  object-fit: cover;
-  object-position: center;
-  overflow: hidden;
-`
 
 export const ContainerIconAction = styled.div`
   display: flex;
