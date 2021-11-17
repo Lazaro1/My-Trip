@@ -152,5 +152,6 @@ export const ButtonSingUp = styled.button`
 `
 
 export const LogoImage = styled.img`
-  width: 150px;
+  width: 350px;
+  color: blue;
 `

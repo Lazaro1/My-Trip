@@ -18,16 +18,7 @@ const Feed: React.FC = () => {
           <S.BoxTravel>
             <ProfileImg />
             <h2>Estrada Real</h2>
-            <img
-              src="img/cachoeira.jpeg"
-              alt=""
-              style={{
-                height: '400px',
-                objectFit: 'cover',
-                objectPosition: 'center',
-                overflow: 'hidden'
-              }}
-            />
+            <S.TravelImg src="img/cachoeira.jpeg" />
             <S.ContainerIconAction>
               <img src="img/iconLike.svg" alt="" />
               <p>15</p>
@@ -48,16 +39,7 @@ const Feed: React.FC = () => {
           <S.BoxTravel>
             <ProfileImg />
             <h2>Estrada Real</h2>
-            <img
-              src="img/cachoeira.jpeg"
-              alt=""
-              style={{
-                height: '400px',
-                objectFit: 'cover',
-                objectPosition: 'center',
-                overflow: 'hidden'
-              }}
-            />
+            <S.TravelImg src="img/cachoeira.jpeg" />
             <S.ContainerIconAction>
               <img src="img/iconLike.svg" alt="" />
               <p>15</p>
@@ -78,16 +60,7 @@ const Feed: React.FC = () => {
           <S.BoxTravel>
             <ProfileImg />
             <h2>Estrada Real</h2>
-            <img
-              src="img/cachoeira.jpeg"
-              alt=""
-              style={{
-                height: '400px',
-                objectFit: 'cover',
-                objectPosition: 'center',
-                overflow: 'hidden'
-              }}
-            />
+            <S.TravelImg src="img/cachoeira.jpeg" />
             <S.ContainerIconAction>
               <img src="img/iconLike.svg" alt="" />
               <p>15</p>
