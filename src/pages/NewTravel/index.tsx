@@ -3,9 +3,14 @@ import * as S from './style'
 import { useRouter } from 'next/router'
 import withAuth from 'utils/withAuth'
 import SideBar from 'components/SideBar'
+import ModalTable from 'components/Modal/Modal'
+import { useState } from 'react'
+import { TravelExpense } from './fakeData'
 
 const NewTravel: React.FC = () => {
   const route = useRouter()
+
+  const [openModal, setOpenModal] = useState(false)
 
   return (
     <S.ContainerFeed>
@@ -21,7 +26,18 @@ const NewTravel: React.FC = () => {
             <h2>Até:</h2>
             <S.BoxInput type="date"></S.BoxInput>
             <h1>Gastos</h1>
-            <a style={{ cursor: 'pointer' }}>+ Nova Transação</a>
+            <a
+              onClick={() => {
+                setOpenModal(true)
+              }}
+              style={{ cursor: 'pointer' }}
+            >
+              + Nova Transação
+            </a>
+            {openModal && <ModalTable closeModal={setOpenModal} />}
+            {TravelExpense.map((expense) => {
+              console.log(expense)
+            })}
             <S.TableExpenses>
               <table>
                 <thead>
@@ -33,24 +49,16 @@ const NewTravel: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th>Hotel Ouro Preto</th>
-                    <th>80,00</th>
-                    <th>30/10/2021</th>
-                    <th>-</th>
-                  </tr>
-                  <tr>
-                    <th>Almoço</th>
-                    <th>20,00</th>
-                    <th>30/10/2021</th>
-                    <th>-</th>
-                  </tr>
-                  <tr>
-                    <th>Passeio de Trem</th>
-                    <th>50,00</th>
-                    <th>30/10/2021</th>
-                    <th>-</th>
-                  </tr>
+                  {TravelExpense.map((expense) => {
+                    return (
+                      <tr key={expense.id}>
+                        <th>{expense.description}</th>
+                        <th>{expense.value}</th>
+                        <th>{expense.date}</th>
+                        <th>-</th>
+                      </tr>
+                    )
+                  })}
                 </tbody>
               </table>
             </S.TableExpenses>

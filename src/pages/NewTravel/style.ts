@@ -99,9 +99,12 @@ export const PerfilImg = styled.img`
 export const TableExpenses = styled.div`
   display: flex;
   flex-direction: column;
-  border: 2px solid #e5e5e5;
+  border-spacing: 0 0.5rem;
   th {
-    border: 2px solid #e5e5e5;
+    background: #e5e5e5;
+    font-weight: normal;
+    padding: 1rem 2rem;
+    text-align: left;
   }
 `
 
