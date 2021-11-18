@@ -54,22 +54,20 @@ const NewTravel: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {TravelExpense.map((expense) => {
-                    return (
-                      <tr key={expense.id}>
-                        <th>{expense.description}</th>
-                        <th style={{ color: 'red' }}>{expense.value}</th>
-                        <th>{expense.date}</th>
-                        <th style={{ textAlign: 'center' }}>
-                          <img
-                            src="img/minus.svg"
-                            alt=""
-                            style={{ cursor: 'pointer' }}
-                          />
-                        </th>
-                      </tr>
-                    )
-                  })}
+                  {TravelExpense.map((expense) => (
+                    <tr key={expense.id}>
+                      <th>{expense.description}</th>
+                      <th style={{ color: 'red' }}>{expense.value}</th>
+                      <th>{expense.date}</th>
+                      <th style={{ textAlign: 'center' }}>
+                        <img
+                          src="img/minus.svg"
+                          alt=""
+                          style={{ cursor: 'pointer' }}
+                        />
+                      </th>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </S.TableExpenses>

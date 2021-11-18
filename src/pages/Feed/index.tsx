@@ -5,9 +5,11 @@ import { useRouter } from 'next/router'
 import Cookies from 'js-cookie'
 import withAuth from 'utils/withAuth'
 import SideBar from 'components/SideBar'
+import { useTravel } from 'contexts/TravelContext'
 
 const Feed: React.FC = () => {
   const route = useRouter()
+  const { toggleIsCompleted } = useTravel()
 
   return (
     <S.ContainerFeed>

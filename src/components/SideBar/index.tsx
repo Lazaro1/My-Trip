@@ -4,9 +4,16 @@ import * as S from './style'
 import { useRouter } from 'next/router'
 import Cookies from 'js-cookie'
 import withAuth from 'utils/withAuth'
+import { useTravel } from 'contexts/TravelContext'
 
 const SideBar: React.FC = () => {
   const route = useRouter()
+  const { toggleIsCompleted, setIsCompleted, isCompleted } = useTravel()
+
+  const teste = () => {
+    // setIsCompleted(true)
+    console.log(isCompleted)
+  }
 
   return (
     <>
@@ -16,7 +23,7 @@ const SideBar: React.FC = () => {
         <h2>Henrique Nobre</h2>
       </S.BoxInfoPerfil>
       <S.BoxInfoRigth>
-        <S.ButtonNewTravel onClick={() => route.push('/NewTravel')}>
+        <S.ButtonNewTravel onClick={() => teste()}>
           Nova viagem
         </S.ButtonNewTravel>
       </S.BoxInfoRigth>

@@ -14,7 +14,7 @@ const Login: React.FC = () => {
   const [confimPassword, setConfirmPassword] = useState('')
 
   useEffect(() => {
-    setTheme(Theme.Dark)
+    setTheme(Theme.Light)
     console.log('This is my context Theme ', theme)
   }, [])
 
