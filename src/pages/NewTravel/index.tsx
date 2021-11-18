@@ -30,9 +30,14 @@ const NewTravel: React.FC = () => {
               onClick={() => {
                 setOpenModal(true)
               }}
-              style={{ cursor: 'pointer' }}
+              style={{
+                cursor: 'pointer',
+                color: 'blue',
+                fontSize: '14px',
+                margin: '10px 0 10px 0'
+              }}
             >
-              + Nova Transação
+              + Novo Gasto
             </a>
             {openModal && <ModalTable closeModal={setOpenModal} />}
             {TravelExpense.map((expense) => {
@@ -53,9 +58,15 @@ const NewTravel: React.FC = () => {
                     return (
                       <tr key={expense.id}>
                         <th>{expense.description}</th>
-                        <th>{expense.value}</th>
+                        <th style={{ color: 'red' }}>{expense.value}</th>
                         <th>{expense.date}</th>
-                        <th>-</th>
+                        <th style={{ textAlign: 'center' }}>
+                          <img
+                            src="img/minus.svg"
+                            alt=""
+                            style={{ cursor: 'pointer' }}
+                          />
+                        </th>
                       </tr>
                     )
                   })}

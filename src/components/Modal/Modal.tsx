@@ -10,35 +10,24 @@ const ModalTable: React.FC = ({ closeModal }) => {
         <S.XButton onClick={() => closeModal(false)}>X</S.XButton>
         <S.Tittle>Novo Gasto</S.Tittle>
         <S.FormContainer>
-          <div>
-            <label>Descrição</label>
-            <input
-              type="text"
-              name="description"
-              id="description"
-              placeholder="Descrição"
-            />
-          </div>
-          <div>
-            <label>Valor</label>
-            <input
-              type="number"
-              name="amount"
-              id="amount"
-              step="0.01"
-              placeholder="0,00"
-            />
-            <small>
-              Use o sinal - (negativo) para despesas e , (vírgula) para casas
-              decimais
-            </small>
-          </div>
-          <div>
-            <label>Data</label>
-            <input type="date" name="date" id="date" />
-          </div>
+          <input
+            type="text"
+            name="description"
+            id="description"
+            placeholder="Descrição"
+          />
 
-          <div>
+          <input
+            type="number"
+            name="amount"
+            id="amount"
+            step="0.01"
+            placeholder="Valor(0,00)"
+          />
+
+          <input type="date" name="date" id="date" />
+
+          <S.FormaAtions>
             <a
               href="#"
               className="button cancel"
@@ -47,7 +36,7 @@ const ModalTable: React.FC = ({ closeModal }) => {
               Cancelar
             </a>
             <button>Salvar</button>
-          </div>
+          </S.FormaAtions>
         </S.FormContainer>
       </S.ModalContainer>
     </S.ModalBackground>

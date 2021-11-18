@@ -100,6 +100,13 @@ export const TableExpenses = styled.div`
   display: flex;
   flex-direction: column;
   border-spacing: 0 0.5rem;
+  thead {
+    color: blue;
+    font-size: 13px;
+  }
+  tbody {
+    font-size: 13px;
+  }
   th {
     background: #e5e5e5;
     font-weight: normal;
