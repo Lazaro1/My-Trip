@@ -1,8 +1,10 @@
 import * as S from './style'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 const ModalTable: React.FC = ({ closeModal }) => {
   const route = useRouter()
+  const [description, setDescription] = useState('')
 
   return (
     <S.ModalBackground>
