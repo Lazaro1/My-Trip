@@ -5,6 +5,14 @@ import { useState } from 'react'
 const ModalTable: React.FC = ({ closeModal }) => {
   const route = useRouter()
   const [description, setDescription] = useState('')
+  const [value, setValue] = useState('')
+  const [date, setDate] = useState('')
+
+  const SetValues = () => {
+    console.log(description)
+    console.log(value)
+    console.log(date)
+  }
 
   return (
     <S.ModalBackground>
@@ -17,6 +25,7 @@ const ModalTable: React.FC = ({ closeModal }) => {
             name="description"
             id="description"
             placeholder="Descrição"
+            onChange={(e) => setDescription(e.target.value)}
           />
 
           <input
@@ -25,9 +34,15 @@ const ModalTable: React.FC = ({ closeModal }) => {
             id="amount"
             step="0.01"
             placeholder="Valor(0,00)"
+            onChange={(e) => setValue(e.target.value)}
           />
 
-          <input type="date" name="date" id="date" />
+          <input
+            type="date"
+            name="date"
+            id="date"
+            onChange={(e) => setDate(e.target.value)}
+          />
 
           <S.FormaAtions>
             <a
@@ -37,7 +52,13 @@ const ModalTable: React.FC = ({ closeModal }) => {
             >
               Cancelar
             </a>
-            <button>Salvar</button>
+            <button
+              onClick={() => {
+                SetValues()
+              }}
+            >
+              Salvar
+            </button>
           </S.FormaAtions>
         </S.FormContainer>
       </S.ModalContainer>
@@ -46,3 +67,24 @@ const ModalTable: React.FC = ({ closeModal }) => {
 }
 
 export default ModalTable
+
+export const TravelExpense = [
+  {
+    id: 1,
+    description: 'Hotel',
+    value: '150,00',
+    date: '17/11/2021'
+  },
+  {
+    id: 2,
+    description: 'Passeio lancha',
+    value: '250,00',
+    date: '17/11/2021'
+  },
+  {
+    id: 3,
+    description: 'Jantar',
+    value: '60,00',
+    date: '17/11/2021'
+  }
+]
