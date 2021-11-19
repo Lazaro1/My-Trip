@@ -2,16 +2,19 @@ import * as S from './style'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-const ModalTable: React.FC = ({ closeModal }) => {
+const ModalTable: React.FC = ({ closeModal, setExpensesValue }) => {
   const route = useRouter()
   const [description, setDescription] = useState('')
   const [value, setValue] = useState('')
   const [date, setDate] = useState('')
 
-  const SetValues = () => {
-    console.log(description)
-    console.log(value)
-    console.log(date)
+  const setValues = (e) => {
+    e.preventDefault()
+    setExpensesValue({
+      description,
+      value,
+      date
+    })
   }
 
   return (
@@ -33,7 +36,7 @@ const ModalTable: React.FC = ({ closeModal }) => {
             name="amount"
             id="amount"
             step="0.01"
-            placeholder="Valor(0,00)"
+            placeholder="Valor (0,00)"
             onChange={(e) => setValue(e.target.value)}
           />
 
@@ -52,13 +55,7 @@ const ModalTable: React.FC = ({ closeModal }) => {
             >
               Cancelar
             </a>
-            <button
-              onClick={() => {
-                SetValues()
-              }}
-            >
-              Salvar
-            </button>
+            <button onClick={setValues}>Salvar</button>
           </S.FormaAtions>
         </S.FormContainer>
       </S.ModalContainer>
@@ -67,24 +64,3 @@ const ModalTable: React.FC = ({ closeModal }) => {
 }
 
 export default ModalTable
-
-export const TravelExpense = [
-  {
-    id: 1,
-    description: 'Hotel',
-    value: '150,00',
-    date: '17/11/2021'
-  },
-  {
-    id: 2,
-    description: 'Passeio lancha',
-    value: '250,00',
-    date: '17/11/2021'
-  },
-  {
-    id: 3,
-    description: 'Jantar',
-    value: '60,00',
-    date: '17/11/2021'
-  }
-]

@@ -5,12 +5,29 @@ import withAuth from 'utils/withAuth'
 import SideBar from 'components/SideBar'
 import ModalTable from 'components/Modal/Modal'
 import { useState } from 'react'
-import { TravelExpense } from './fakeData'
+
+interface IExpense {
+  description: string
+  value: string
+  date: string
+}
 
 const NewTravel: React.FC = () => {
   const route = useRouter()
 
   const [openModal, setOpenModal] = useState(false)
+  const [expenses, setExpenses] = useState<IExpense[]>([])
+
+  const setExpensesValues = (expense: IExpense) => {
+    const newArray = expenses
+    newArray.push(expense)
+    setExpenses(newArray)
+    setOpenModal(false)
+  }
+
+  const removeExpense = (index) => {
+    setExpenses(expenses.splice(index - 1, 1))
+  }
 
   return (
     <S.ContainerFeed>
@@ -39,10 +56,12 @@ const NewTravel: React.FC = () => {
             >
               + Novo Gasto
             </a>
-            {openModal && <ModalTable closeModal={setOpenModal} />}
-            {TravelExpense.map((expense) => {
-              console.log(expense)
-            })}
+            {openModal && (
+              <ModalTable
+                closeModal={setOpenModal}
+                setExpensesValue={setExpensesValues}
+              />
+            )}
             <S.TableExpenses>
               <table>
                 <thead>
@@ -54,9 +73,9 @@ const NewTravel: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {TravelExpense.map((expense) => {
+                  {expenses.map((expense, index) => {
                     return (
-                      <tr key={expense.id}>
+                      <tr key={index}>
                         <th>{expense.description}</th>
                         <th style={{ color: 'red' }}>{expense.value}</th>
                         <th>{expense.date}</th>
@@ -65,6 +84,7 @@ const NewTravel: React.FC = () => {
                             src="img/minus.svg"
                             alt=""
                             style={{ cursor: 'pointer' }}
+                            onClick={() => removeExpense(index)}
                           />
                         </th>
                       </tr>
