@@ -5,6 +5,12 @@ import { Input, InputLabel } from 'styles/inputs'
 import { useRouter } from 'next/router'
 import Cookie from 'js-cookie'
 import addDays from 'date-fns/addDays'
+import { Formik, Form } from 'formik'
+
+interface UserValues {
+  user: string
+  password: string
+}
 
 const Login: React.FC = () => {
   const { theme, setTheme } = useTheme()
@@ -12,6 +18,7 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confimPassword, setConfirmPassword] = useState('')
+  const initialValues: UserValues = { user: '', password: '' }
 
   useEffect(() => {
     setTheme(Theme.Dark)
@@ -52,13 +59,13 @@ const Login: React.FC = () => {
     }
   }
 
-  const enterLogin = (event) => {
+  const enterLogin = (event: any) => {
     if (event.keyCode === 13) {
       handleSignIn()
     }
   }
 
-  const enterRegister = (event) => {
+  const enterRegister = (event: any) => {
     if (event.keyCode === 13) {
       createLogin()
     }
@@ -133,37 +140,46 @@ const Login: React.FC = () => {
               <S.SubTitle>Comunidade de Viagens</S.SubTitle>
               <S.Span>Crie sua conta</S.Span>
             </S.ContainerTitle>
-            <S.ContainerForm>
-              <S.InputZone>
-                <InputLabel>Email Address</InputLabel>
-                <Input
-                  type="email"
-                  placeholder="example@email.com"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </S.InputZone>
-              <S.InputZone>
-                <InputLabel>Password</InputLabel>
-                <Input
-                  type="Password"
-                  placeholder="************"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </S.InputZone>
-              <S.InputZone>
-                <InputLabel>Confirm Password</InputLabel>
-                <Input
-                  type="Password"
-                  placeholder="************"
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  onKeyDown={(e) => enterRegister(e)}
-                />
-              </S.InputZone>
 
-              <S.ButtonSingIn type="submit" onClick={(e) => createLogin(e)}>
-                Registrar
-              </S.ButtonSingIn>
-            </S.ContainerForm>
+            <Formik
+              // validationSchema={schema.register}
+              initialValues={initialValues}
+              onSubmit={createLogin}
+            >
+              {() => (
+                <S.ContainerForm>
+                  <S.InputZone>
+                    <InputLabel>Email Address</InputLabel>
+                    <Input
+                      type="email"
+                      placeholder="example@email.com"
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </S.InputZone>
+                  <S.InputZone>
+                    <InputLabel>Password</InputLabel>
+                    <Input
+                      type="Password"
+                      placeholder="************"
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </S.InputZone>
+                  <S.InputZone>
+                    <InputLabel>Confirm Password</InputLabel>
+                    <Input
+                      type="Password"
+                      placeholder="************"
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      onKeyDown={(e) => enterRegister(e)}
+                    />
+                  </S.InputZone>
+
+                  <S.ButtonSingIn type="submit" onClick={(e) => createLogin(e)}>
+                    Registrar
+                  </S.ButtonSingIn>
+                </S.ContainerForm>
+              )}
+            </Formik>
           </>
         )}
       </S.ContainerLeft>
