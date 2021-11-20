@@ -9,7 +9,7 @@ const SideBar: React.FC = () => {
   const route = useRouter()
 
   return (
-    <>
+    <S.ContainerSideBar>
       <S.BoxInfoPerfil>
         <S.BackgroundPerfil src="img/retangulo.png" />
         <S.PerfilImg src="img/profile.jpg" />
@@ -49,7 +49,7 @@ const SideBar: React.FC = () => {
         <ProfileImg />
         <ProfileImg />
       </S.BoxInfoRigth>
-    </>
+    </S.ContainerSideBar>
   )
 }
 

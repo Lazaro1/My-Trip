@@ -78,7 +78,7 @@ const Login: React.FC = () => {
       <S.ContainerLeft>
         {isSiginVisible ? (
           <>
-          <S.LogoDisplayColumn src="img/LogoLogin.png" />
+            <S.LogoDisplayColumn src="img/LogoLogin.png" />
             <S.ContainerTitle>
               <S.SubTitle>Bem vindo a sua</S.SubTitle>
               <S.SubTitle>Comunidade de Viagens</S.SubTitle>
@@ -104,44 +104,38 @@ const Login: React.FC = () => {
               </S.InputZone>
             </S.ContainerForm>
             <S.ContainerAction>
-            <S.ContainerRow>
               <S.ContainerRow>
-                <input type="checkbox" />
-                <label htmlFor="">Lembra-me</label>
+                <S.ContainerRow>
+                  <input type="checkbox" />
+                  <label htmlFor="">Lembra-me</label>
+                </S.ContainerRow>
+                <a href="">Esqueceu sua senha</a>
               </S.ContainerRow>
-              <a href="">Esqueceu sua senha</a>
-            </S.ContainerRow>
-            <S.ContainerRow
-              style={{ justifyContent: 'space-between', marginRight: '40px' }}
-            >
-              <S.ButtonSingIn type="submit" onClick={(e) => handleSignIn(e)}>
-                Login
-              </S.ButtonSingIn>
-              <S.ButtonSingInMobile
-                type="submit"
-                onClick={(e) => createLogin(e)}
-              >
-                Registrar
-              </S.ButtonSingInMobile>
-            </S.ContainerRow>
-            <S.ContainerRow
-              style={{
-                fontSize: '18px',
-                marginTop: '5%',
-                justifyContent: 'flex-start'
-              }}
-            >
-              <p>Ou logar com</p>
-              <a
-                style={{
-                  color: '#3751fe',
-                  marginLeft: '10px'
-                }}
-                href=""
-              >
-                Google
-              </a>
-            </S.ContainerRow>
+              <S.ContainerRow>
+                <S.ButtonSingIn type="submit" onClick={(e) => handleSignIn(e)}>
+                  Login
+                </S.ButtonSingIn>
+                <S.ButtonSingInMobile
+                  type="submit"
+                  onClick={() => {
+                    setIsSiginVisible(false)
+                  }}
+                >
+                  Registrar
+                </S.ButtonSingInMobile>
+              </S.ContainerRow>
+              <S.ContainerRow style={{ marginTop: '15px' }}>
+                <p>Ou logar com</p>
+                <a
+                  style={{
+                    color: '#3751fe',
+                    marginLeft: '10px'
+                  }}
+                  href=""
+                >
+                  Google
+                </a>
+              </S.ContainerRow>
             </S.ContainerAction>
           </>
         ) : (
@@ -153,45 +147,45 @@ const Login: React.FC = () => {
               <S.Span>Crie sua conta</S.Span>
             </S.ContainerTitle>
 
-            <Formik
+            {/* <Formik
               // validationSchema={schema.register}
               initialValues={initialValues}
               onSubmit={createLogin}
             >
-              {() => (
-                <S.ContainerForm>
-                  <S.InputZone>
-                    <InputLabel>Email Address</InputLabel>
-                    <Input
-                      type="email"
-                      placeholder="example@email.com"
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </S.InputZone>
-                  <S.InputZone>
-                    <InputLabel>Password</InputLabel>
-                    <Input
-                      type="Password"
-                      placeholder="************"
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                  </S.InputZone>
-                  <S.InputZone>
-                    <InputLabel>Confirm Password</InputLabel>
-                    <Input
-                      type="Password"
-                      placeholder="************"
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                      onKeyDown={(e) => enterRegister(e)}
-                    />
-                  </S.InputZone>
+              {() => ( */}
+            <S.ContainerForm>
+              <S.InputZone>
+                <InputLabel>Email Address</InputLabel>
+                <Input
+                  type="email"
+                  placeholder="example@email.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </S.InputZone>
+              <S.InputZone>
+                <InputLabel>Password</InputLabel>
+                <Input
+                  type="Password"
+                  placeholder="************"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </S.InputZone>
+              <S.InputZone>
+                <InputLabel>Confirm Password</InputLabel>
+                <Input
+                  type="Password"
+                  placeholder="************"
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  onKeyDown={(e) => enterRegister(e)}
+                />
+              </S.InputZone>
 
-                  <S.ButtonSingIn type="submit" onClick={(e) => createLogin(e)}>
-                    Registrar
-                  </S.ButtonSingIn>
-                </S.ContainerForm>
-              )}
-            </Formik>
+              <S.ButtonSingIn type="submit" onClick={(e) => createLogin(e)}>
+                Registrar
+              </S.ButtonSingIn>
+            </S.ContainerForm>
+            {/* )}
+            </Formik> */}
           </>
         )}
       </S.ContainerLeft>

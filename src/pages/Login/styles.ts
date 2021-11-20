@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   height: 100%;
   @media (max-width: 800px) {
     flex-direction: column;
-    }
+  }
 `
 
 export const ContainerLeft = styled.div`
@@ -21,7 +21,7 @@ export const ContainerLeft = styled.div`
   padding-left: 5%;
   @media (max-width: 800px) {
     width: 100%;
-    
+    padding: 0;
   }
 `
 
@@ -30,17 +30,16 @@ export const ContainerTitle = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  @media (max-width: 800px){
-    
+  @media (max-width: 800px) {
     align-items: center;
   }
 `
 export const LogoDisplayColumn = styled.img`
- width: 200px;
- display: none;
- @media (max-width: 800px){
-   display: unset;
- }
+  width: 200px;
+  display: none;
+  @media (max-width: 800px) {
+    display: unset;
+  }
 `
 
 export const SubTitle = styled.span`
@@ -50,7 +49,7 @@ export const SubTitle = styled.span`
   font-family: 'Open Sans', sans-serif;
   color: #3751fe;
   margin-bottom: 15px;
- `
+`
 export const Span = styled.span`
   margin-bottom: 7%;
   font-size: 18px;
@@ -61,7 +60,7 @@ export const Span = styled.span`
   font-style: normal;
   letter-spacing: 0em;
   text-align: left;
- `
+`
 
 export const ContainerForm = styled.form`
   display: flex;
@@ -69,7 +68,7 @@ export const ContainerForm = styled.form`
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  @media(max-width: 800px){
+  @media (max-width: 800px) {
     align-items: center;
   }
 `
@@ -91,12 +90,11 @@ export const InputZone = styled.div`
   }
 `
 export const ContainerAction = styled.div`
-width: 100%;
+  width: 100%;
 
-@media(max-width:800px){
- justify-content: center;
-}
-
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
 `
 
 export const ContainerRow = styled.div`
@@ -107,13 +105,21 @@ export const ContainerRow = styled.div`
   color: rgba(0, 0, 0, 0.61);
   label {
     margin-left: 5px;
+    @media (max-width: 800px) {
+      font-size: 14px;
+    }
   }
   a {
     margin-left: 36%;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.61);
+    @media (max-width: 800px) {
+      font-size: 14px;
+    }
   }
-
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
 `
 
 export const ButtonSingIn = styled.button`
@@ -131,7 +137,9 @@ export const ButtonSingIn = styled.button`
     border: 2px solid #0c31f1;
     color: #0c31f1;
   }
-  
+  @media (max-width: 800px) {
+    margin-right: 80px;
+  }
 `
 
 export const ButtonSingInMobile = styled.button`
@@ -160,7 +168,6 @@ export const ContainerRight = styled.div`
   flex-direction: column;
   align-items: center;
 
-
   width: 54.1%;
   height: 100%;
   background: #e5e5e5;
@@ -183,7 +190,7 @@ export const ContainerButton = styled.div`
 export const ButtonSingUp = styled.button`
   width: 152px;
   height: 61px;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -204,5 +211,4 @@ export const ButtonSingUp = styled.button`
 
 export const LogoImage = styled.img`
   width: 400px;
-  
 `

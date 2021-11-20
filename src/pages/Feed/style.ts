@@ -22,6 +22,9 @@ export const ContainerFlexRow = styled.div`
   margin-top: 81px;
   background: #e5e5e5;
   align-items: flex-start;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `
 
 export const ContainerLeft = styled.div`
@@ -29,6 +32,9 @@ export const ContainerLeft = styled.div`
   flex-direction: column;
   align-items: center;
   width: 71%;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `
 export const BoxTravel = styled.div`
   display: flex;
