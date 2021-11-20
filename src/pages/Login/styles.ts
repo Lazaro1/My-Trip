@@ -187,6 +187,10 @@ export const ButtonSingUp = styled.button`
     background: #0c31f1;
     color: white;
   }
+  @media (max-width: 800px) {
+    width: 320px;
+    border-radius: 25px;
+  }
 `
 
 export const LogoImage = styled.img`

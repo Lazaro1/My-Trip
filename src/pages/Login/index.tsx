@@ -122,7 +122,6 @@ const Login: React.FC = () => {
                     color: '#3751fe',
                     marginLeft: '10px'
                   }}
-                  href=""
                 >
                   Cadastre-se
                 </a>
