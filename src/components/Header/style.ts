@@ -33,11 +33,17 @@ export const ContainerFlexIcon = styled.div`
 
   strong {
     cursor: pointer;
+    @media (max-width: 800px) {
+      display: none;
+    }
   }
 `
 
 export const IconMenu = styled.img`
   cursor: pointer;
+  @media (max-width: 800px) {
+    height: 100%;
+  }
 `
 
 export const ContainerSearch = styled.div`
@@ -47,6 +53,9 @@ export const ContainerSearch = styled.div`
   border-right: 1px solid #f4f4f4;
   margin-left: 13.8%;
   width: 25.4%;
+  @media (max-width: 800px) {
+    display: none;
+  }
 `
 
 export const ContainerProfile = styled.div`

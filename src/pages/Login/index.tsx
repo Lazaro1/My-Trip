@@ -101,35 +101,25 @@ const Login: React.FC = () => {
             </S.ContainerForm>
             <S.ContainerAction>
               <S.ContainerRow>
-                <S.ContainerRow>
-                  <input type="checkbox" />
-                  <label htmlFor="">Lembra-me</label>
-                </S.ContainerRow>
-                <a href="">Esqueceu sua senha</a>
+                <a href="">Esqueceu a senha?</a>
               </S.ContainerRow>
               <S.ContainerRow>
                 <S.ButtonSingIn type="submit" onClick={(e) => handleSignIn(e)}>
                   Login
                 </S.ButtonSingIn>
-                <S.ButtonSingInMobile
-                  type="submit"
+              </S.ContainerRow>
+              <S.ContainerRow style={{ marginTop: '15px' }}>
+                <p>Novo no MyTrip?</p>
+                <a
                   onClick={() => {
                     setIsSiginVisible(false)
                   }}
-                >
-                  Registrar
-                </S.ButtonSingInMobile>
-              </S.ContainerRow>
-              <S.ContainerRow style={{ marginTop: '15px' }}>
-                <p>Ou logar com</p>
-                <a
                   style={{
                     color: '#3751fe',
                     marginLeft: '10px'
                   }}
-                  href=""
                 >
-                  Google
+                  Cadastre-se
                 </a>
               </S.ContainerRow>
             </S.ContainerAction>

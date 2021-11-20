@@ -7,6 +7,9 @@ export const ContainerFlex = styled.div`
 
   strong {
     font-size: 1.3rem;
+    @media (max-width: 800px) {
+      display: none;
+    }
   }
 `
 
