@@ -5,7 +5,7 @@ import { Input, InputLabel } from 'styles/inputs'
 import { useRouter } from 'next/router'
 import Cookie from 'js-cookie'
 import addDays from 'date-fns/addDays'
-import { Formik, Form } from 'formik'
+//import { Formik, Form } from 'formik'
 
 interface UserValues {
   user: string
@@ -78,8 +78,8 @@ const Login: React.FC = () => {
       <S.ContainerLeft>
         {isSiginVisible ? (
           <>
+          <S.LogoDisplayColumn src="img/LogoLogin.png" />
             <S.ContainerTitle>
-              <S.Title>MyTrip</S.Title>
               <S.SubTitle>Bem vindo a sua</S.SubTitle>
               <S.SubTitle>Comunidade de Viagens</S.SubTitle>
               <S.Span>Entre com sua conta</S.Span>
@@ -103,6 +103,7 @@ const Login: React.FC = () => {
                 />
               </S.InputZone>
             </S.ContainerForm>
+            <S.ContainerAction>
             <S.ContainerRow>
               <S.ContainerRow>
                 <input type="checkbox" />
@@ -141,11 +142,12 @@ const Login: React.FC = () => {
                 Google
               </a>
             </S.ContainerRow>
+            </S.ContainerAction>
           </>
         ) : (
           <>
+            <S.LogoDisplayColumn src="img/LogoLogin.png" />
             <S.ContainerTitle>
-              <S.Title>MyTrip</S.Title>
               <S.SubTitle>Bem vindo a sua</S.SubTitle>
               <S.SubTitle>Comunidade de Viagens</S.SubTitle>
               <S.Span>Crie sua conta</S.Span>

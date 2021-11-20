@@ -5,20 +5,23 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     flex-direction: column;
-  }
+    }
 `
 
 export const ContainerLeft = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   width: 45.9%;
   padding-top: 2%;
   padding-left: 5%;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: 100%;
+    
   }
 `
 
@@ -26,15 +29,18 @@ export const ContainerTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
+  @media (max-width: 800px){
+    
+    align-items: center;
+  }
 `
-
-export const Title = styled.span`
-  font-size: 72px;
-  line-height: 84.38px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  color: #3751fe;
-  margin-bottom: 46px;
+export const LogoDisplayColumn = styled.img`
+ width: 200px;
+ display: none;
+ @media (max-width: 800px){
+   display: unset;
+ }
 `
 
 export const SubTitle = styled.span`
@@ -44,7 +50,7 @@ export const SubTitle = styled.span`
   font-family: 'Open Sans', sans-serif;
   color: #3751fe;
   margin-bottom: 15px;
-`
+ `
 export const Span = styled.span`
   margin-bottom: 7%;
   font-size: 18px;
@@ -55,13 +61,17 @@ export const Span = styled.span`
   font-style: normal;
   letter-spacing: 0em;
   text-align: left;
-`
+ `
 
 export const ContainerForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  width: 100%;
+  @media(max-width: 800px){
+    align-items: center;
+  }
 `
 export const InputZone = styled.div`
   width: 87%;
@@ -80,6 +90,14 @@ export const InputZone = styled.div`
     border-left: 4px solid blue;
   }
 `
+export const ContainerAction = styled.div`
+width: 100%;
+
+@media(max-width:800px){
+ justify-content: center;
+}
+
+`
 
 export const ContainerRow = styled.div`
   margin-top: 5px;
@@ -95,6 +113,7 @@ export const ContainerRow = styled.div`
     text-decoration: none;
     color: rgba(0, 0, 0, 0.61);
   }
+
 `
 
 export const ButtonSingIn = styled.button`
@@ -112,6 +131,7 @@ export const ButtonSingIn = styled.button`
     border: 2px solid #0c31f1;
     color: #0c31f1;
   }
+  
 `
 
 export const ButtonSingInMobile = styled.button`
@@ -130,7 +150,7 @@ export const ButtonSingInMobile = styled.button`
     color: #0c31f1;
   }
   display: none;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     display: unset;
   }
 `
@@ -140,10 +160,11 @@ export const ContainerRight = styled.div`
   flex-direction: column;
   align-items: center;
 
+
   width: 54.1%;
   height: 100%;
   background: #e5e5e5;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     display: none;
   }
 `
@@ -162,7 +183,7 @@ export const ContainerButton = styled.div`
 export const ButtonSingUp = styled.button`
   width: 152px;
   height: 61px;
-
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,4 +204,5 @@ export const ButtonSingUp = styled.button`
 
 export const LogoImage = styled.img`
   width: 400px;
+  
 `
