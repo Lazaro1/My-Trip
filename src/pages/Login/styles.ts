@@ -35,7 +35,7 @@ export const ContainerTitle = styled.div`
   }
 `
 export const LogoDisplayColumn = styled.img`
-  width: 200px;
+  height: 170px;
   display: none;
   @media (max-width: 800px) {
     display: unset;
@@ -49,6 +49,10 @@ export const SubTitle = styled.span`
   font-family: 'Open Sans', sans-serif;
   color: #3751fe;
   margin-bottom: 15px;
+  @media (max-width: 800px) {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
 `
 export const Span = styled.span`
   margin-bottom: 7%;
@@ -60,6 +64,10 @@ export const Span = styled.span`
   font-style: normal;
   letter-spacing: 0em;
   text-align: left;
+  @media (max-width: 800px) {
+    font-size: 14px;
+    line-height: 0;
+  }
 `
 
 export const ContainerForm = styled.form`
@@ -88,10 +96,12 @@ export const InputZone = styled.div`
   &:hover {
     border-left: 4px solid blue;
   }
+  @media (max-width: 800px) {
+    width: 320px;
+  }
 `
 export const ContainerAction = styled.div`
   width: 100%;
-
   @media (max-width: 800px) {
     justify-content: center;
   }
@@ -101,21 +111,11 @@ export const ContainerRow = styled.div`
   margin-top: 5px;
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   color: rgba(0, 0, 0, 0.61);
-  label {
-    margin-left: 5px;
-    @media (max-width: 800px) {
-      font-size: 14px;
-    }
-  }
   a {
-    margin-left: 36%;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.61);
-    @media (max-width: 800px) {
-      font-size: 14px;
-    }
   }
   @media (max-width: 800px) {
     justify-content: center;
@@ -138,28 +138,8 @@ export const ButtonSingIn = styled.button`
     color: #0c31f1;
   }
   @media (max-width: 800px) {
-    margin-right: 80px;
-  }
-`
-
-export const ButtonSingInMobile = styled.button`
-  background: #0c31f1;
-  width: 129px;
-  height: 54px;
-  margin-top: 3%;
-  color: white;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  &:hover {
-    background: white;
-    border: 2px solid #0c31f1;
-    color: #0c31f1;
-  }
-  display: none;
-  @media (max-width: 800px) {
-    display: unset;
+    width: 320px;
+    border-radius: 25px;
   }
 `
 
