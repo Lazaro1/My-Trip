@@ -110,9 +110,19 @@ const Login: React.FC = () => {
               </S.ContainerRow>
               <a href="">Esqueceu sua senha</a>
             </S.ContainerRow>
-            <S.ButtonSingIn type="submit" onClick={(e) => handleSignIn(e)}>
-              Login
-            </S.ButtonSingIn>
+            <S.ContainerRow
+              style={{ justifyContent: 'space-between', marginRight: '40px' }}
+            >
+              <S.ButtonSingIn type="submit" onClick={(e) => handleSignIn(e)}>
+                Login
+              </S.ButtonSingIn>
+              <S.ButtonSingInMobile
+                type="submit"
+                onClick={(e) => createLogin(e)}
+              >
+                Registrar
+              </S.ButtonSingInMobile>
+            </S.ContainerRow>
             <S.ContainerRow
               style={{
                 fontSize: '18px',

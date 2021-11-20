@@ -5,6 +5,9 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `
 
 export const ContainerLeft = styled.div`
@@ -14,6 +17,9 @@ export const ContainerLeft = styled.div`
   width: 45.9%;
   padding-top: 2%;
   padding-left: 5%;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 export const ContainerTitle = styled.div`
@@ -108,6 +114,27 @@ export const ButtonSingIn = styled.button`
   }
 `
 
+export const ButtonSingInMobile = styled.button`
+  background: #0c31f1;
+  width: 129px;
+  height: 54px;
+  margin-top: 3%;
+  color: white;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  &:hover {
+    background: white;
+    border: 2px solid #0c31f1;
+    color: #0c31f1;
+  }
+  display: none;
+  @media (max-width: 600px) {
+    display: unset;
+  }
+`
+
 export const ContainerRight = styled.div`
   display: flex;
   flex-direction: column;
@@ -116,6 +143,9 @@ export const ContainerRight = styled.div`
   width: 54.1%;
   height: 100%;
   background: #e5e5e5;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 
 export const ContainerButton = styled.div`
