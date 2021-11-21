@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const InputZone = styled.div`
-  width: 65%;
+  width: 22vw;
   height: 70px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   display: flex;
   flex-direction: column;
@@ -45,4 +45,16 @@ export const Input = styled.input`
   line-height: 21.09px;
   font-family: 'Roboto', sans-serif;
   color: #3751fe;
+`
+
+export const DangerZone = styled.div`
+  width: 300px;
+  height: 60px;
+  margin-top: 5px;
+  padding-left: 10px;
+`
+export const ErrorLabel = styled.label`
+  margin-left: 15px;
+  font-weight: bold;
+  color: #990000;
 `

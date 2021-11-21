@@ -24,17 +24,14 @@ const Login: React.FC = () => {
     console.log('This is my context Theme ', theme)
   }, [])
 
-  const handleSignIn = (values) => {
-    console.log('teste')
+  const handleSignIn = (values: any) => {
     const { email, password } = values
     const resultUser = localStorage.getItem('userAuth')
     const usersLogged = resultUser ? JSON.parse(resultUser) : {}
-
     if (usersLogged.email == email && usersLogged.password == password) {
       Cookie.set('token', 'token-here', {
         expires: addDays(new Date(), 1)
       })
-
       route.push('/Feed')
     } else {
       alert('Usuário ou senha digitado incorretamente')
@@ -42,13 +39,11 @@ const Login: React.FC = () => {
   }
 
   const createLogin = (values: UserValues) => {
-    console.log('teste')
     const { email, password } = values
     const userLogin = {
       email: email,
       password: password
     }
-
     localStorage.setItem('userAuth', JSON.stringify(userLogin))
     setIsSiginVisible(true)
   }
@@ -73,12 +68,14 @@ const Login: React.FC = () => {
             >
               {() => (
                 <S.ContainerForm>
-                  <Field name="email" type="email" label="Email" />
-                  <Field name="password" type="password" label="Senha" />
-                  <S.ContainerRow>
-                    <a href="">Esqueceu a senha?</a>
-                  </S.ContainerRow>
-                  <S.ButtonSingIn type="submit">Login</S.ButtonSingIn>
+                  <Form>
+                    <Field name="email" type="email" label="Email" />
+                    <Field name="password" type="password" label="Senha" />
+                    <S.ContainerRow>
+                      <a href="">Esqueceu a senha?</a>
+                    </S.ContainerRow>
+                    <S.ButtonSingIn type="submit">Login</S.ButtonSingIn>
+                  </Form>
                 </S.ContainerForm>
               )}
             </Formik>
@@ -116,15 +113,17 @@ const Login: React.FC = () => {
             >
               {() => (
                 <S.ContainerForm>
-                  <Field name="email" type="email" label="Email" />
-                  <Field name="password" type="password" label="Senha" />
-                  <Field
-                    name="confirmPassword"
-                    type="password"
-                    label="Confirmar Senha"
-                  />
+                  <Form>
+                    <Field name="email" type="email" label="Email" />
+                    <Field name="password" type="password" label="Senha" />
+                    <Field
+                      name="confirmPassword"
+                      type="password"
+                      label="Confirmar Senha"
+                    />
 
-                  <S.ButtonSingIn type="submit">Registrar</S.ButtonSingIn>
+                    <S.ButtonSingIn type="submit">Registrar</S.ButtonSingIn>
+                  </Form>
                 </S.ContainerForm>
               )}
             </Formik>
