@@ -5,10 +5,12 @@ import { Input, InputLabel } from 'styles/inputs'
 import { useRouter } from 'next/router'
 import Cookie from 'js-cookie'
 import addDays from 'date-fns/addDays'
-//import { Formik, Form } from 'formik'
+import Field from 'components/Field'
+import { Formik, Form, useField } from 'formik'
+import * as Schema from 'utils/schema'
 
 interface UserValues {
-  user: string
+  email: string
   password: string
 }
 
@@ -18,7 +20,7 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confimPassword, setConfirmPassword] = useState('')
-  const initialValues: UserValues = { user: '', password: '' }
+  const initialValues: UserValues = { email: '', password: '' }
 
   useEffect(() => {
     setTheme(Theme.Dark)
@@ -42,21 +44,15 @@ const Login: React.FC = () => {
     }
   }
 
-  const createLogin = () => {
+  const createLogin = (values: UserValues) => {
+    const { email, password } = values
     const userLogin = {
       email: email,
       password: password
     }
 
-    if (!email || !password) {
-      alert('Preencha os campos de usuário e senha')
-    } else if (password != confimPassword) {
-      alert('Confirmação de senha incorreta')
-    } else {
-      localStorage.setItem('userAuth', JSON.stringify(userLogin))
-
-      setIsSiginVisible(true)
-    }
+    localStorage.setItem('userAuth', JSON.stringify(userLogin))
+    setIsSiginVisible(true)
   }
 
   const enterLogin = (event: any) => {
@@ -137,45 +133,27 @@ const Login: React.FC = () => {
               <S.Span>Crie sua conta</S.Span>
             </S.ContainerTitle>
 
-            {/* <Formik
-              // validationSchema={schema.register}
+            <Formik
+              validationSchema={Schema.ValidationRegister}
               initialValues={initialValues}
               onSubmit={createLogin}
             >
-              {() => ( */}
-            <S.ContainerForm>
-              <S.InputZone>
-                <InputLabel>Email Address</InputLabel>
-                <Input
-                  type="email"
-                  placeholder="example@email.com"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </S.InputZone>
-              <S.InputZone>
-                <InputLabel>Password</InputLabel>
-                <Input
-                  type="Password"
-                  placeholder="************"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </S.InputZone>
-              <S.InputZone>
-                <InputLabel>Confirm Password</InputLabel>
-                <Input
-                  type="Password"
-                  placeholder="************"
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  onKeyDown={(e) => enterRegister(e)}
-                />
-              </S.InputZone>
+              {() => (
+                <Form>
+                  <S.ContainerForm>
+                    <Field name="email" type="email" label="Email" />
+                    <Field name="password" type="password" label="Senha" />
+                    <Field
+                      name="confirmPassword"
+                      type="password"
+                      label="Confirmar Senha"
+                    />
 
-              <S.ButtonSingIn type="submit" onClick={(e) => createLogin(e)}>
-                Registrar
-              </S.ButtonSingIn>
-            </S.ContainerForm>
-            {/* )}
-            </Formik> */}
+                    <S.ButtonSingIn type="submit">Registrar</S.ButtonSingIn>
+                  </S.ContainerForm>
+                </Form>
+              )}
+            </Formik>
           </>
         )}
       </S.ContainerLeft>
