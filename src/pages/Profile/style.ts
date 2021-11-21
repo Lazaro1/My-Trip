@@ -29,6 +29,9 @@ export const ContainerLeft = styled.div`
   flex-direction: column;
   align-items: center;
   width: 71%;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `
 export const BoxProfileInfo = styled.div`
   display: flex;

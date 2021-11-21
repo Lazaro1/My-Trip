@@ -47,6 +47,9 @@ export const BoxTravel = styled.div`
   h2 {
     margin: 15px 0 15px;
   }
+  @media (max-width: 600px) {
+    width: 95%;
+  }
 `
 export const TravelImg = styled.img`
   height: 400px;

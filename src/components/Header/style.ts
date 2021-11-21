@@ -20,6 +20,12 @@ export const ContainerLogo = styled.div`
   img {
     width: auto;
     height: 150px;
+    @media(max-width: 800px){
+      height: 125px;
+    }
+    @media(max-width: 600px){
+      height: 90px;
+    }
   }
 `
 
@@ -45,20 +51,24 @@ export const ContainerSearch = styled.div`
   margin-left: 13.8%;
   width: 25.4%;
 
-@media(max-width: 1010px){
-  margin-left: 6.9%;
+@media(max-width: 1035px){
+  margin-left: 5.9%;
  
 }  
 @media(max-width: 910px){
-  margin-left: 3.45%;
+  margin-left: 0;
 }
+@media(max-width: 800px){
+  margin-left: 0;
+  width: 12.7%;
+}
+
  input{
-   @media(max-width:770px){
+   @media(max-width:800px){
      display: none;
    }
    
  }
-}  
 `
 
 export const ContainerProfile = styled.div`
@@ -76,6 +86,10 @@ export const ContainerProfile = styled.div`
 export const IconImage = styled.img`
   width: 36px;
   height: 36px;
+  @media(max-width: 600px){
+    width: 27px;
+    height: 22px;
+  }
 `
 export const Input = styled.input`
   outline: none;
@@ -102,13 +116,16 @@ export const ContainerFlexIcon = styled.div`
     margin-bottom: 13px;
     cursor: pointer;
   }
-  @media(max-width:850px){
-    width: 75px;
-    }
+  @media(max-width:600px){
+  width: 60px;
+  }
+ // @media(max-width:850px){
+  //  width: 75px;
+   // }
   strong {
     cursor: pointer;
-   // @media(max-width:770px){
-    // display: none;
-   // }
+    @media(max-width:600px){
+    display: none;
+    }
   }
 `

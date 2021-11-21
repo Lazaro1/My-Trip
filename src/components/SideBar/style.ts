@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 export const ContainerSideBar = styled.div`
   width: 100%;
- // @media (max-width: 725px) {
-   // display: none;
- // }
+  @media (max-width: 800px) {
+  display: none;
+ }
 `
 
 export const BoxInfoPerfil = styled.div`

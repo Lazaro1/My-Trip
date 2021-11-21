@@ -14,8 +14,8 @@ export const InputLabel = styled.label`
 export const Input = styled.input`
   outline: none;
   border: none;
-  margin: 0px 0px 6px 27px;
-
+  margin: 0px 0px 6px 15px;
+  width: 360px;
   font-size: 18px;
   line-height: 21px;
   font-weight: 500;
