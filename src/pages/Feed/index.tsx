@@ -1,5 +1,5 @@
 import Header from 'components/Header'
-import ProfileImg from 'components/ProfileImg'
+import ProfileImg2 from 'components/ProfileImg2'
 import * as S from './style'
 import { useRouter } from 'next/router'
 import Cookies from 'js-cookie'
@@ -16,7 +16,7 @@ const Feed: React.FC = () => {
       <S.ContainerFlexRow>
         <S.ContainerLeft>
           <S.BoxTravel>
-            <ProfileImg />
+            <ProfileImg2 />
             <h2>Estrada Real</h2>
             <S.TravelImg src="img/cachoeira.jpeg" />
             <S.ContainerIconAction>
@@ -37,7 +37,7 @@ const Feed: React.FC = () => {
             </S.ContainerComent>
           </S.BoxTravel>
           <S.BoxTravel>
-            <ProfileImg />
+            <ProfileImg2 />
             <h2>Estrada Real</h2>
             <S.TravelImg src="img/cachoeira.jpeg" />
             <S.ContainerIconAction>
@@ -58,7 +58,7 @@ const Feed: React.FC = () => {
             </S.ContainerComent>
           </S.BoxTravel>
           <S.BoxTravel>
-            <ProfileImg />
+            <ProfileImg2 />
             <h2>Estrada Real</h2>
             <S.TravelImg src="img/cachoeira.jpeg" />
             <S.ContainerIconAction>
