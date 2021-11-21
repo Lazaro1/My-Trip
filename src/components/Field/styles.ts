@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const InputZone = styled.div`
-  width: 87%;
+  width: 65%;
   height: 70px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 
   display: flex;
   flex-direction: column;
@@ -15,6 +15,9 @@ export const InputZone = styled.div`
 
   &:hover {
     border-left: 4px solid blue;
+  }
+  @media (max-width: 800px) {
+    width: 320px;
   }
 `
 
@@ -31,6 +34,7 @@ export const InputLabel = styled.label`
 `
 
 export const Input = styled.input`
+  width: 80%;
   outline: none;
   border: none;
   margin: 0px 0px 6px 27px;

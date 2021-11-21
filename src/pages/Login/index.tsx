@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import Cookie from 'js-cookie'
 import addDays from 'date-fns/addDays'
 import Field from 'components/Field'
-//import { Formik, Form, useField } from 'formik'
+import { Formik, Form } from 'formik'
 import * as Schema from 'utils/schema'
 
 interface UserValues {
@@ -17,9 +17,6 @@ interface UserValues {
 const Login: React.FC = () => {
   const { theme, setTheme } = useTheme()
   const route = useRouter()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confimPassword, setConfirmPassword] = useState('')
   const initialValues: UserValues = { email: '', password: '' }
 
   useEffect(() => {
@@ -27,13 +24,13 @@ const Login: React.FC = () => {
     console.log('This is my context Theme ', theme)
   }, [])
 
-  const handleSignIn = () => {
+  const handleSignIn = (values) => {
+    console.log('teste')
+    const { email, password } = values
     const resultUser = localStorage.getItem('userAuth')
     const usersLogged = resultUser ? JSON.parse(resultUser) : {}
 
-    if (!email || !password) {
-      alert('Preencha os campos de usuário e senha')
-    } else if (usersLogged.email == email && usersLogged.password == password) {
+    if (usersLogged.email == email && usersLogged.password == password) {
       Cookie.set('token', 'token-here', {
         expires: addDays(new Date(), 1)
       })
@@ -45,6 +42,7 @@ const Login: React.FC = () => {
   }
 
   const createLogin = (values: UserValues) => {
+    console.log('teste')
     const { email, password } = values
     const userLogin = {
       email: email,
@@ -53,18 +51,6 @@ const Login: React.FC = () => {
 
     localStorage.setItem('userAuth', JSON.stringify(userLogin))
     setIsSiginVisible(true)
-  }
-
-  const enterLogin = (event: any) => {
-    if (event.keyCode === 13) {
-      handleSignIn()
-    }
-  }
-
-  const enterRegister = (event: any) => {
-    if (event.keyCode === 13) {
-      createLogin()
-    }
   }
 
   const [isSiginVisible, setIsSiginVisible] = useState(true)
@@ -80,34 +66,23 @@ const Login: React.FC = () => {
               <S.SubTitle>Comunidade de Viagens</S.SubTitle>
               <S.Span>Entre com sua conta</S.Span>
             </S.ContainerTitle>
-            <S.ContainerForm>
-              <S.InputZone>
-                <InputLabel>Email Address</InputLabel>
-                <Input
-                  type="email"
-                  placeholder="example@email.com"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </S.InputZone>
-              <S.InputZone>
-                <InputLabel>Password</InputLabel>
-                <Input
-                  type="Password"
-                  placeholder="************"
-                  onChange={(e) => setPassword(e.target.value)}
-                  onKeyDown={(e) => enterLogin(e)}
-                />
-              </S.InputZone>
-            </S.ContainerForm>
+            <Formik
+              validationSchema={Schema.SigIn}
+              initialValues={initialValues}
+              onSubmit={handleSignIn}
+            >
+              {() => (
+                <S.ContainerForm>
+                  <Field name="email" type="email" label="Email" />
+                  <Field name="password" type="password" label="Senha" />
+                  <S.ContainerRow>
+                    <a href="">Esqueceu a senha?</a>
+                  </S.ContainerRow>
+                  <S.ButtonSingIn type="submit">Login</S.ButtonSingIn>
+                </S.ContainerForm>
+              )}
+            </Formik>
             <S.ContainerAction>
-              <S.ContainerRow>
-                <a href="">Esqueceu a senha?</a>
-              </S.ContainerRow>
-              <S.ContainerRow>
-                <S.ButtonSingIn type="submit" onClick={(e) => handleSignIn(e)}>
-                  Login
-                </S.ButtonSingIn>
-              </S.ContainerRow>
               <S.ContainerRow style={{ marginTop: '15px' }}>
                 <p>Novo no MyTrip?</p>
                 <a
@@ -116,7 +91,8 @@ const Login: React.FC = () => {
                   }}
                   style={{
                     color: '#3751fe',
-                    marginLeft: '10px'
+                    marginLeft: '10px',
+                    cursor: 'pointer'
                   }}
                 >
                   Cadastre-se
@@ -133,25 +109,23 @@ const Login: React.FC = () => {
               <S.Span>Crie sua conta</S.Span>
             </S.ContainerTitle>
 
-           <Formik
+            <Formik
               validationSchema={Schema.ValidationRegister}
               initialValues={initialValues}
               onSubmit={createLogin}
             >
               {() => (
-                <Form>
-                  <S.ContainerForm>
-                    <Field name="email" type="email" label="Email" />
-                    <Field name="password" type="password" label="Senha" />
-                    <Field
-                      name="confirmPassword"
-                      type="password"
-                      label="Confirmar Senha"
-                    />
+                <S.ContainerForm>
+                  <Field name="email" type="email" label="Email" />
+                  <Field name="password" type="password" label="Senha" />
+                  <Field
+                    name="confirmPassword"
+                    type="password"
+                    label="Confirmar Senha"
+                  />
 
-                    <S.ButtonSingIn type="submit">Registrar</S.ButtonSingIn>
-                  </S.ContainerForm>
-                </Form>
+                  <S.ButtonSingIn type="submit">Registrar</S.ButtonSingIn>
+                </S.ContainerForm>
               )}
             </Formik>
           </>
@@ -160,15 +134,29 @@ const Login: React.FC = () => {
 
       <S.ContainerRight>
         <S.ContainerButton>
-          {/*<ButtonJoin>Crie sua conta</ButtonJoin>*/}
-          <S.ButtonSingUp
-            onClick={() => {
-              setIsSiginVisible(false)
-            }}
-            style={{ marginLeft: '16px' }}
-          >
-            Registar
-          </S.ButtonSingUp>
+          {isSiginVisible ? (
+            <>
+              <S.ButtonSingUp
+                onClick={() => {
+                  setIsSiginVisible(false)
+                }}
+                style={{ marginLeft: '16px' }}
+              >
+                Registar
+              </S.ButtonSingUp>
+            </>
+          ) : (
+            <>
+              <S.ButtonSingUp
+                onClick={() => {
+                  setIsSiginVisible(true)
+                }}
+                style={{ marginLeft: '16px' }}
+              >
+                Entrar
+              </S.ButtonSingUp>
+            </>
+          )}
         </S.ContainerButton>
         <S.LogoImage src="img/LogoLogin.png" alt="Imagem Logo" />
       </S.ContainerRight>

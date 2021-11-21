@@ -80,26 +80,7 @@ export const ContainerForm = styled.form`
     align-items: center;
   }
 `
-export const InputZone = styled.div`
-  width: 87%;
-  height: 70px;
-  margin-bottom: 5px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  background: #ffffff;
-  border: 2px solid #c1bbbb;
-
-  &:hover {
-    border-left: 4px solid blue;
-  }
-  @media (max-width: 800px) {
-    width: 320px;
-  }
-`
 export const ContainerAction = styled.div`
   width: 100%;
   @media (max-width: 800px) {
