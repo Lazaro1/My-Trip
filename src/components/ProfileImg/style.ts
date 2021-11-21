@@ -7,11 +7,12 @@ export const ContainerFlex = styled.div`
 
   strong {
     font-size: 1.3rem;
-    @media (max-width: 800px) {
+    @media (max-width: 825px) {
       display: none;
     }
   }
 `
+
 
 export const Profile = styled.img`
   border-radius: 100%;

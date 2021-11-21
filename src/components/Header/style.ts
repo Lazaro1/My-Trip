@@ -28,16 +28,7 @@ export const ContainerMenu = styled.div`
   align-items: center;
 `
 
-export const ContainerFlexIcon = styled.div`
-  width: 90px;
 
-  strong {
-    cursor: pointer;
-    @media (max-width: 800px) {
-      display: none;
-    }
-  }
-`
 
 export const IconMenu = styled.img`
   cursor: pointer;
@@ -53,9 +44,13 @@ export const ContainerSearch = styled.div`
   border-right: 1px solid #f4f4f4;
   margin-left: 13.8%;
   width: 25.4%;
-  @media (max-width: 800px) {
-    display: none;
-  }
+ @media(max-width: 900px){
+  margin-left: 7.8%;
+ }
+ @media(max-width: 825px){
+  display: none;
+ }
+ 
 `
 
 export const ContainerProfile = styled.div`
@@ -65,4 +60,38 @@ export const ContainerProfile = styled.div`
   border-left: 1px solid #f4f4f4;
   padding-left: 30px;
   cursor: pointer;
+`
+export const IconImage = styled.img`
+  width: 36px;
+  height: 36px;
+`
+export const Input = styled.input`
+  outline: none;
+  border: none;
+  margin: 0px 0px 6px 27px;
+
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 500;
+  line-height: 21.09px;
+  font-family: 'Roboto', sans-serif;
+  color: #3751fe;
+    `
+export const ContainerFlexIcon = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px;
+  justify-content: space-between;
+
+  img {
+    margin-bottom: 13px;
+    cursor: pointer;
+  }
+  strong {
+    cursor: pointer;
+    @media(max-width:825px){
+      display: none;
+    }
+  }
 `

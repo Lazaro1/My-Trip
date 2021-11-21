@@ -1,45 +1,36 @@
-import { ContainerFlexIcon } from 'styles/container'
-import {
-  ContainerFixedTop,
-  ContainerLogo,
-  ContainerMenu,
-  ContainerProfile,
-  ContainerSearch
-} from './style'
-import { Input } from 'styles/inputs'
+import * as S from  './style'
 import ProfileImg from 'components/ProfileImg'
-import { IconImage } from 'styles/image'
 import { useRouter } from 'next/router'
 
 const Header: React.FC = () => {
   const route = useRouter()
   return (
-    <ContainerFixedTop>
-      <ContainerLogo>
+    <S.ContainerFixedTop>
+      <S.ContainerLogo>
         <img src="img/iconLogo.png" alt="" />
-      </ContainerLogo>
-      <ContainerMenu>
-        <ContainerFlexIcon onClick={() => route.push('/Feed')}>
-          <IconImage src="img/iconFeed.svg" />
+      </S.ContainerLogo>
+      <S.ContainerMenu>
+        <S.ContainerFlexIcon onClick={() => route.push('/Feed')}>
+          <S.IconImage src="img/iconFeed.svg" />
           <strong>FEED</strong>
-        </ContainerFlexIcon>
-        <ContainerFlexIcon>
-          <IconImage src="img/iconUsers.svg" />
+        </S.ContainerFlexIcon>
+        <S.ContainerFlexIcon>
+          <S.IconImage src="img/iconUsers.svg" />
           <strong>AMIGOS</strong>
-        </ContainerFlexIcon>
-        <ContainerFlexIcon>
-          <IconImage src="img/iconTravel.svg" />
+        </S.ContainerFlexIcon>
+        <S.ContainerFlexIcon>
+          <S.IconImage src="img/iconTravel.svg" />
           <strong>VIAGENS</strong>
-        </ContainerFlexIcon>
-      </ContainerMenu>
-      <ContainerSearch>
+        </S.ContainerFlexIcon>
+      </S.ContainerMenu>
+      <S.ContainerSearch>
         <img src="img/iconSearch.svg" />
-        <Input placeholder="Pesquisa" />
-      </ContainerSearch>
-      <ContainerProfile onClick={() => route.push('/Profile')}>
+        <S.Input placeholder="Pesquisa" />
+      </S.ContainerSearch>
+      <S.ContainerProfile onClick={() => route.push('/Profile')}>
         <ProfileImg />
-      </ContainerProfile>
-    </ContainerFixedTop>
+      </S.ContainerProfile>
+    </S.ContainerFixedTop>
   )
 }
 export default Header
