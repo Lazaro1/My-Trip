@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import Cookie from 'js-cookie'
 import addDays from 'date-fns/addDays'
 import Field from 'components/Field'
-import { Formik, Form, useField } from 'formik'
+//import { Formik, Form, useField } from 'formik'
 import * as Schema from 'utils/schema'
 
 interface UserValues {
@@ -133,7 +133,7 @@ const Login: React.FC = () => {
               <S.Span>Crie sua conta</S.Span>
             </S.ContainerTitle>
 
-            <Formik
+           <Formik
               validationSchema={Schema.ValidationRegister}
               initialValues={initialValues}
               onSubmit={createLogin}

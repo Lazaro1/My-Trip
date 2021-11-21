@@ -7,9 +7,9 @@ export const ContainerFlex = styled.div`
 
   strong {
     font-size: 1.3rem;
-    @media (max-width: 825px) {
-      display: none;
-    }
+    //@media (max-width: 725px) {
+     // display: none;
+   // }
   }
 `
 
