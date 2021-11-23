@@ -9,7 +9,7 @@ import { format } from 'date-fns'
 
 interface IExpense {
   description: string
-  value: number
+  value: string
   date: string
 }
 
@@ -19,12 +19,17 @@ const NewTravel: React.FC = () => {
   const [openModal, setOpenModal] = useState(false)
   const [expenses, setExpenses] = useState<IExpense[]>([])
 
-  const valorFormatado = (value) =>
-    value.toLocaleString('pt-BR', {
+  const [totalExpense, setTotalExpense] = useState(0)
+
+  const formatValue = (value) => {
+    const fvalue = parseFloat(value)
+    return fvalue.toLocaleString('pt-BR', {
       style: 'currency',
       currency: 'BRL'
     })
-  console.log(valorFormatado(123))
+  }
+  const formatDate = (value) =>
+    format(new Date(value.replace('-', ',')), 'dd/MM/yyyy')
 
   const setExpensesValues = (expense: IExpense) => {
     const newArray = expenses
@@ -86,16 +91,9 @@ const NewTravel: React.FC = () => {
                       <tr key={index}>
                         <th>{expense.description}</th>
                         <th style={{ color: 'red' }}>
-                          {valorFormatado(expense.value)}
-                          {console.log(expense.value)}
-                          {console.log(valorFormatado(expense.value))}
+                          {formatValue(expense.value)}
                         </th>
-                        <th>
-                          {format(
-                            new Date(expense.date.replace('-', ',')),
-                            'dd/MM/yyyy'
-                          )}
-                        </th>
+                        <th>{formatDate(expense.date)}</th>
                         <th style={{ textAlign: 'center' }}>
                           <img
                             src="img/minus.svg"
@@ -107,6 +105,12 @@ const NewTravel: React.FC = () => {
                       </tr>
                     )
                   })}
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Total</th>
+                    <th>{formatValue(250)}</th>
+                  </tr>
                 </tbody>
               </table>
             </S.TableExpenses>
