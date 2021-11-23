@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const ContainerSideBar = styled.div`
   width: 100%;
   @media (max-width: 800px) {
-  display: none;
- }
+    display: none;
+  }
 `
 
 export const BoxInfoPerfil = styled.div`
@@ -66,13 +66,26 @@ export const PerfilImg = styled.img`
 `
 
 export const ButtonNewTravel = styled.button`
-  height: 25px;
+  height: 30px;
   width: 80%;
-  background: #3751fe;
-  border-radius: 8px;
-  border: none;
-  color: white;
+  background: white;
+  border-radius: 25px;
+  border: 1px solid #378fe9;
+  color: #378fe9;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
   &:hover {
+    animation-name: background-color;
+    animation-duration: 150ms;
+    /* Only change code below this line */
+    animation-fill-mode: forwards;
+    /* Only change code above this line */
+  }
+  @keyframes background-color {
+    100% {
+      background-color: rgba(173, 216, 230, 0.3);
+      border: 2px solid #3751fe;
+    }
   }
 `

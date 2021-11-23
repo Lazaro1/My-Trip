@@ -5,10 +5,11 @@ import withAuth from 'utils/withAuth'
 import SideBar from 'components/SideBar'
 import ModalTable from 'components/Modal/Modal'
 import { useState } from 'react'
+import { format } from 'date-fns'
 
 interface IExpense {
   description: string
-  value: string
+  value: number
   date: string
 }
 
@@ -17,6 +18,13 @@ const NewTravel: React.FC = () => {
 
   const [openModal, setOpenModal] = useState(false)
   const [expenses, setExpenses] = useState<IExpense[]>([])
+
+  const valorFormatado = (value) =>
+    value.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    })
+  console.log(valorFormatado(123))
 
   const setExpensesValues = (expense: IExpense) => {
     const newArray = expenses
@@ -77,8 +85,17 @@ const NewTravel: React.FC = () => {
                     return (
                       <tr key={index}>
                         <th>{expense.description}</th>
-                        <th style={{ color: 'red' }}>{expense.value}</th>
-                        <th>{expense.date}</th>
+                        <th style={{ color: 'red' }}>
+                          {valorFormatado(expense.value)}
+                          {console.log(expense.value)}
+                          {console.log(valorFormatado(expense.value))}
+                        </th>
+                        <th>
+                          {format(
+                            new Date(expense.date.replace('-', ',')),
+                            'dd/MM/yyyy'
+                          )}
+                        </th>
                         <th style={{ textAlign: 'center' }}>
                           <img
                             src="img/minus.svg"

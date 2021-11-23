@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTheme, Theme } from 'contexts/ThemeContext'
 import * as S from './styles'
-import { Input, InputLabel } from 'styles/inputs'
 import { useRouter } from 'next/router'
 import Cookie from 'js-cookie'
 import addDays from 'date-fns/addDays'
