@@ -9,7 +9,7 @@ import { format } from 'date-fns'
 
 interface IExpense {
   description: string
-  value: string
+  value: number
   date: string
 }
 
@@ -19,7 +19,12 @@ const NewTravel: React.FC = () => {
   const [openModal, setOpenModal] = useState(false)
   const [expenses, setExpenses] = useState<IExpense[]>([])
 
-  const [totalExpense, setTotalExpense] = useState(0)
+  let totalExpenses = 0
+  if (expenses.length != 0) {
+    totalExpenses = expenses
+      .map((item) => parseFloat(item.value))
+      .reduce((prev, next) => prev + next)
+  }
 
   const formatValue = (value) => {
     const fvalue = parseFloat(value)
@@ -109,7 +114,7 @@ const NewTravel: React.FC = () => {
                     <th></th>
                     <th></th>
                     <th>Total</th>
-                    <th>{formatValue(250)}</th>
+                    <th>{formatValue(totalExpenses)}</th>
                   </tr>
                 </tbody>
               </table>
