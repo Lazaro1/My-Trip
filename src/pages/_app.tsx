@@ -2,6 +2,8 @@ import React from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import GlobalStyles from 'styles/global'
+import 'mapbox-gl/dist/mapbox-gl.css'
+import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css'
 
 function App({ Component, pageProps }: AppProps) {
   return (

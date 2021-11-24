@@ -6,6 +6,7 @@ import SideBar from 'components/SideBar'
 import ModalTable from 'components/Modal/Modal'
 import { useState } from 'react'
 import { format } from 'date-fns'
+import MapBox from 'components/Map'
 
 interface IExpense {
   description: string
@@ -120,7 +121,9 @@ const NewTravel: React.FC = () => {
               </table>
             </S.TableExpenses>
             <h1>Rotas</h1>
-            <img src="img/RotasMapa.png" alt="" />
+            <div style={{ height: '400px' }}>
+              <MapBox />
+            </div>
             <h1>Diário de Bordo</h1>
             <S.BoxInput
               style={{ height: '100px' }}
