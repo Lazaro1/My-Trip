@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react'
 import MapGL from 'react-map-gl'
-import Geocoder from 'react-map-gl-geocoder'
+import Directions from 'react-map-gl-directions'
 
 // Ways to set Mapbox token: https://uber.github.io/react-map-gl/#/Documentation/getting-started/about-mapbox-tokens
 const MAPBOX_TOKEN =
@@ -18,7 +18,6 @@ const MapBox = () => {
     []
   )
 
-  // if you are happy with Geocoder default settings, you can just use handleViewportChange directly
   const handleGeocoderViewportChange = useCallback((newViewport) => {
     const geocoderDefaultOverrides = { transitionDuration: 1000 }
 
@@ -38,12 +37,14 @@ const MapBox = () => {
         mapStyle="mapbox://styles/mapbox/streets-v11"
         onViewportChange={handleViewportChange}
         mapboxApiAccessToken={MAPBOX_TOKEN}
+        language="pt-BR"
       >
-        <Geocoder
+        <Directions
           mapRef={mapRef}
-          onViewportChange={handleGeocoderViewportChange}
           mapboxApiAccessToken={MAPBOX_TOKEN}
           position="top-left"
+          unit="metric"
+          language="pt-BR"
         />
       </MapGL>
     </div>
