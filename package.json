@@ -27,7 +27,7 @@
     "react-dom": "16.13.1",
     "react-icons": "^4.3.1",
     "react-map-gl": "^6.1.12",
-    "react-map-gl-directions": "react-map-gl-directions",
+    "react-map-gl-directions": "file:react-map-gl-directions",
     "styled-components": "^5.3.0",
     "webpack": "4",
     "yup": "^0.32.11"

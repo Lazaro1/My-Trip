@@ -3,7 +3,7 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 import GlobalStyles from 'styles/global'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import 'react-map-gl-directions/mapbox-gl-directions.css'
+import '../../react-map-gl-directions/mapbox-gl-directions.css'
 
 function App({ Component, pageProps }: AppProps) {
   return (

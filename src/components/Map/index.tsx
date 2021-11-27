@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react'
 import MapGL from 'react-map-gl'
-import Directions from 'react-map-gl-directions'
+import Directions from '../../../react-map-gl-directions'
 
 // Ways to set Mapbox token: https://uber.github.io/react-map-gl/#/Documentation/getting-started/about-mapbox-tokens
 const MAPBOX_TOKEN =
@@ -37,7 +37,6 @@ const MapBox = () => {
         mapStyle="mapbox://styles/mapbox/streets-v11"
         onViewportChange={handleViewportChange}
         mapboxApiAccessToken={MAPBOX_TOKEN}
-        language="pt-BR"
       >
         <Directions
           mapRef={mapRef}
