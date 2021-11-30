@@ -1,51 +1,90 @@
-import React, { useState, useRef, useCallback } from 'react'
-import MapGL from 'react-map-gl'
-import Directions from '../../../react-map-gl-directions'
+import React, { useRef, useEffect, useState } from 'react'
+import mapboxgl from 'mapbox-gl'
+import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 
-// Ways to set Mapbox token: https://uber.github.io/react-map-gl/#/Documentation/getting-started/about-mapbox-tokens
-const MAPBOX_TOKEN =
-  'pk.eyJ1IjoiaGVucmlxdWVub2JyZSIsImEiOiJja3dkZ3c2YmoydzdhMzBvMGRtdWVnd3J2In0.xdCkUviv0yGpX-t8EL7ZKQ'
+mapboxgl.accessToken =
+  'pk.eyJ1IjoiamF5c2VhbjEwMDEiLCJhIjoiY2t3ZXlld2xtMDljYzJwbXViOTR2ZnJtMCJ9.IRBDhiDcLdcSCroBDzQ-TA'
 
 const MapBox = () => {
-  const [viewport, setViewport] = useState({
-    latitude: -16.6906,
-    longitude: -43.8054,
-    zoom: 8
-  })
-  const mapRef = useRef()
-  const handleViewportChange = useCallback(
-    (newViewport) => setViewport(newViewport),
-    []
-  )
+  const mapContainerRef = useRef(null)
 
-  const handleGeocoderViewportChange = useCallback((newViewport) => {
-    const geocoderDefaultOverrides = { transitionDuration: 1000 }
+  const [lng, setLng] = useState(-87.65)
+  const [lat, setLat] = useState(41.84)
+  const [zoom, setZoom] = useState(10)
 
-    return handleViewportChange({
-      ...newViewport,
-      ...geocoderDefaultOverrides
+  // Initialize map when component mounts
+  useEffect(() => {
+    const map = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [lng, lat],
+      zoom: zoom
     })
-  }, [])
+
+    // map.on('click', function(){
+
+    // })
+
+    map.on('load', function () {
+      // Add a GeoJSON source with multiple points
+      map.addSource('points', {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: geoJson.features
+        }
+      })
+      // Add a symbol layer
+      map.addLayer({
+        id: 'points',
+        type: 'circle',
+        source: 'points',
+        paint: {
+          'circle-radius': 12,
+          'circle-stroke-width': 3,
+          'circle-color': 'red',
+          'circle-stroke-color': 'white',
+          'circle-opacity': 0.7
+        }
+      })
+    })
+
+    // Add navigation control (the +/- zoom buttons)
+    map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
+
+    // direction box
+    const directions = new Directions({ accessToken: mapboxgl.accessToken })
+    map.addControl(directions, 'top-left')
+
+    map.on('moveend', () => {
+      setLng(map.getCenter().lng.toFixed(4))
+      setLat(map.getCenter().lat.toFixed(4))
+      setZoom(12)
+    })
+
+    map.on('click', (e) => {
+      map.flyTo({
+        center: [e?.lngLat?.lng.toFixed(4), e?.lngLat?.lat?.toFixed(4)],
+        zoom: 12,
+        speed: 0.2
+      })
+      setLng(e?.lngLat?.lng?.toFixed(4))
+      setLat(e?.lngLat?.lat?.toFixed(4))
+      setZoom(12)
+    })
+
+    // Clean up on unmount
+    return () => map.remove()
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div style={{ height: '100%' }}>
-      <MapGL
-        ref={mapRef}
-        {...viewport}
-        width="100%"
-        height="100%"
-        mapStyle="mapbox://styles/mapbox/streets-v11"
-        onViewportChange={handleViewportChange}
-        mapboxApiAccessToken={MAPBOX_TOKEN}
-      >
-        <Directions
-          mapRef={mapRef}
-          mapboxApiAccessToken={MAPBOX_TOKEN}
-          position="top-left"
-          unit="metric"
-          language="pt-BR"
-        />
-      </MapGL>
+    <div>
+      <div className="sidebarStyle">
+        <div>
+          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+        </div>
+      </div>
+      <div className="map-container" ref={mapContainerRef} />
     </div>
   )
 }
