@@ -121,7 +121,7 @@ const NewTravel: React.FC = () => {
               </table>
             </S.TableExpenses>
             <h1>Rotas</h1>
-            <div style={{ height: '400px' }}>
+            <div style={{ height: '500px' }}>
               <MapBox />
             </div>
             <h1>Diário de Bordo</h1>

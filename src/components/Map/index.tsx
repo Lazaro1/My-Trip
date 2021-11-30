@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import mapboxgl from 'mapbox-gl'
 import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
+import * as S from './styles'
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoiamF5c2VhbjEwMDEiLCJhIjoiY2t3ZXlld2xtMDljYzJwbXViOTR2ZnJtMCJ9.IRBDhiDcLdcSCroBDzQ-TA'
@@ -8,8 +9,8 @@ mapboxgl.accessToken =
 const MapBox = () => {
   const mapContainerRef = useRef(null)
 
-  const [lng, setLng] = useState(-87.65)
-  const [lat, setLat] = useState(41.84)
+  const [lng, setLng] = useState(-43.8647)
+  const [lat, setLat] = useState(-16.737)
   const [zoom, setZoom] = useState(10)
 
   // Initialize map when component mounts
@@ -25,7 +26,7 @@ const MapBox = () => {
 
     // })
 
-    map.on('load', function () {
+    /* map.on('load', function () {
       // Add a GeoJSON source with multiple points
       map.addSource('points', {
         type: 'geojson',
@@ -33,9 +34,9 @@ const MapBox = () => {
           type: 'FeatureCollection',
           features: geoJson.features
         }
-      })
-      // Add a symbol layer
-      map.addLayer({
+      }) */
+    // Add a symbol layer
+    /* map.addLayer({
         id: 'points',
         type: 'circle',
         source: 'points',
@@ -46,14 +47,21 @@ const MapBox = () => {
           'circle-stroke-color': 'white',
           'circle-opacity': 0.7
         }
-      })
-    })
+      }) */
+    /* }) */
 
     // Add navigation control (the +/- zoom buttons)
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
 
     // direction box
-    const directions = new Directions({ accessToken: mapboxgl.accessToken })
+    const directions = new Directions({
+      accessToken: mapboxgl.accessToken,
+      unit: 'metric',
+      language: 'pt-BR',
+      placeholderOrigin: 'Ponto de partida',
+      placeholderDestination: 'Destino'
+    })
+
     map.addControl(directions, 'top-left')
 
     map.on('moveend', () => {
@@ -78,14 +86,10 @@ const MapBox = () => {
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div>
-      <div className="sidebarStyle">
-        <div>
-          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-        </div>
-      </div>
-      <div className="map-container" ref={mapContainerRef} />
-    </div>
+    <S.MapContainer>
+      <S.Map ref={mapContainerRef} />
+      <button onClick={() => console.log(Directions.distance)}>salvar</button>
+    </S.MapContainer>
   )
 }
 
