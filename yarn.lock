@@ -1508,7 +1508,11 @@
   resolved "https://registry.npmjs.org/@mapbox/jsonlint-lines-primitives/-/jsonlint-lines-primitives-2.0.2.tgz"
   integrity sha1-zlblOfg1UrWNENZy6k1vya3HsjQ=
 
+<<<<<<< HEAD
 "@mapbox/mapbox-gl-directions@^4.0.3", "@mapbox/mapbox-gl-directions@^4.1.0":
+=======
+"@mapbox/mapbox-gl-directions@^4.0.3":
+>>>>>>> 9877c37b8f93620b0a653fe24f677f15398d72ad
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@mapbox/mapbox-gl-directions/-/mapbox-gl-directions-4.1.0.tgz#9eba7cedaedfe896509fc23d2b421831ccac989f"
   integrity sha512-wWxkdZ9iQSkUbBZbm/kINRsYNFlr9OzABn/RbXmNCZHC2R2lRi5ZEiBCqJSwp7pANsTROXb/9TsysSXx6hIGuQ==
@@ -6529,7 +6533,11 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+<<<<<<< HEAD
 mapbox-gl@^2.3.0, mapbox-gl@^2.6.1:
+=======
+mapbox-gl@^2.3.0:
+>>>>>>> 9877c37b8f93620b0a653fe24f677f15398d72ad
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-2.6.1.tgz#de8aadeb16b157b732d174b51aeaba0223ab71bb"
   integrity sha512-faGbSZfcFuZ4GWwkWnJrRD3oICZAt/mVKnGuOmeBobCj9onfTRz270qSoOXeRBKd3po5VA2cCPI91YwA8DsAoQ==

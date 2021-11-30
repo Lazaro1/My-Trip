@@ -24,6 +24,11 @@ export const ContainerFlexRow = styled.div`
   align-items: flex-start;
   @media (max-width: 800px) {
     flex-direction: column;
+
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
   }
 `
 

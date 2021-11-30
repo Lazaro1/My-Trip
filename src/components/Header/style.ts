@@ -24,7 +24,7 @@ export const ContainerLogo = styled.div`
       height: 125px;
     }
     @media(max-width: 600px){
-      height: 90px;
+      height: 110px;
     }
   }
 `
@@ -32,6 +32,9 @@ export const ContainerLogo = styled.div`
 export const ContainerMenu = styled.div`
   display: flex;
   align-items: center;
+  @media(max-width: 600px){
+     width: 140px;
+  }
 `
 
 
@@ -59,6 +62,7 @@ export const ContainerSearch = styled.div`
   margin-left: 0;
 }
 @media(max-width: 800px){
+  //margin-right: 5px;
   margin-left: 0;
   width: 12.7%;
 }
@@ -66,6 +70,7 @@ export const ContainerSearch = styled.div`
  input{
    @media(max-width:800px){
      display: none;
+     margin-right: 5px;
    }
    
  }
@@ -104,6 +109,9 @@ export const Input = styled.input`
   color: #3751fe;
 
   width: 50%;
+  &:hover{
+    background-color: Snow;
+  }
     `
 export const ContainerFlexIcon = styled.div`
   display: flex;
