@@ -19,6 +19,8 @@ const NewTravel: React.FC = () => {
 
   const [openModal, setOpenModal] = useState(false)
   const [expenses, setExpenses] = useState<IExpense[]>([])
+  const [distances, setDistances] = useState(0)
+  const [comsumption, setComsumption] = useState(0)
 
   let totalExpenses = 0
   if (expenses.length != 0) {
@@ -122,9 +124,15 @@ const NewTravel: React.FC = () => {
             </S.TableExpenses>
             <h1>Rotas</h1>
             <div style={{ height: '500px' }}>
-              <MapBox />
+              <MapBox
+                setPropDist={setDistances}
+                setComsumption={setComsumption}
+              />
+              <h2>
+                Gato com Gasolina={formatValue((distances / comsumption) * 7)}
+              </h2>
             </div>
-            <h1>Diário de Bordo</h1>
+            <h1 style={{ marginTop: '50px' }}>Diário de Bordo</h1>
             <S.BoxInput
               style={{ height: '100px' }}
               placeholder="Informações adcionais da viagem"

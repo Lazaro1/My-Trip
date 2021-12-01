@@ -6,7 +6,7 @@ import * as S from './styles'
 mapboxgl.accessToken =
   'pk.eyJ1IjoiamF5c2VhbjEwMDEiLCJhIjoiY2t3ZXlld2xtMDljYzJwbXViOTR2ZnJtMCJ9.IRBDhiDcLdcSCroBDzQ-TA'
 
-const MapBox = () => {
+const MapBox = ({ setPropDist, setComsumption }) => {
   const mapContainerRef = useRef(null)
 
   const [lng, setLng] = useState(-43.8647)
@@ -22,34 +22,6 @@ const MapBox = () => {
       center: [lng, lat],
       zoom: zoom
     })
-
-    // map.on('click', function(){
-
-    // })
-
-    /* map.on('load', function () {
-      // Add a GeoJSON source with multiple points
-      map.addSource('points', {
-        type: 'geojson',
-        data: {
-          type: 'FeatureCollection',
-          features: geoJson.features
-        }
-      }) */
-    // Add a symbol layer
-    /* map.addLayer({
-        id: 'points',
-        type: 'circle',
-        source: 'points',
-        paint: {
-          'circle-radius': 12,
-          'circle-stroke-width': 3,
-          'circle-color': 'red',
-          'circle-stroke-color': 'white',
-          'circle-opacity': 0.7
-        }
-      }) */
-    /* }) */
 
     // Add navigation control (the +/- zoom buttons)
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
@@ -90,10 +62,23 @@ const MapBox = () => {
     return () => map.remove()
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  const gasExpense = () => {
+    setPropDist(distance)
+  }
+
   return (
     <S.MapContainer>
       <S.Map ref={mapContainerRef} />
-      <h3>Total KM = {distance}</h3>
+      <S.ContainerRow>
+        <label htmlFor="comsumption">Média de consumo do seu veículo=</label>
+        <S.BoxInput
+          name="comsumption"
+          placeholder="ex: 25"
+          type="number"
+          onChange={(e) => setComsumption(e.target.value)}
+        />
+      </S.ContainerRow>
+      <S.ButtonExpense onClick={gasExpense}>Calcular</S.ButtonExpense>
     </S.MapContainer>
   )
 }
