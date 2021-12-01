@@ -12,6 +12,7 @@ const MapBox = () => {
   const [lng, setLng] = useState(-43.8647)
   const [lat, setLat] = useState(-16.737)
   const [zoom, setZoom] = useState(10)
+  const [distance, setDistance] = useState(0)
 
   // Initialize map when component mounts
   useEffect(() => {
@@ -81,6 +82,10 @@ const MapBox = () => {
       setZoom(12)
     })
 
+    directions.on('route', (route) => {
+      setDistance(route.route[0].distance / 1000)
+    })
+
     // Clean up on unmount
     return () => map.remove()
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
@@ -88,7 +93,7 @@ const MapBox = () => {
   return (
     <S.MapContainer>
       <S.Map ref={mapContainerRef} />
-      <button onClick={() => console.log(Directions.distance)}>salvar</button>
+      <h3>Total KM = {distance}</h3>
     </S.MapContainer>
   )
 }
