@@ -129,7 +129,7 @@ const NewTravel: React.FC = () => {
                 setComsumption={setComsumption}
               />
               <h2>
-                Gato com Gasolina={formatValue((distances / comsumption) * 7)}
+                Gasto com Gasolina={formatValue((distances / comsumption) * 7)}
               </h2>
             </div>
             <h1 style={{ marginTop: '50px' }}>Diário de Bordo</h1>

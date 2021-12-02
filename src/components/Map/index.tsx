@@ -11,7 +11,7 @@ const MapBox = ({ setPropDist, setComsumption }) => {
 
   const [lng, setLng] = useState(-43.8647)
   const [lat, setLat] = useState(-16.737)
-  const [zoom, setZoom] = useState(10)
+  const [zoom, setZoom] = useState(12)
   const [distance, setDistance] = useState(0)
 
   // Initialize map when component mounts
